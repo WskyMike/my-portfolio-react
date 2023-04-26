@@ -1,0 +1,18 @@
+.App {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+  margin-left: 3vh;
+}
+
+.delay {
+  animation: fade-in 1s;
+  animation-delay: 2.7s;
+  opacity: 0;
+  animation-fill-mode: forwards; /* Сохранять состояние после окончания анимации */
+}
+
+
+
+
+

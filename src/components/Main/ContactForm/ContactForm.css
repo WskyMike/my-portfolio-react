@@ -1,0 +1,133 @@
+.contact-form {
+  max-width: 30vw;
+  margin: 10vh 0 0 0;
+  padding: 2vh;
+  border-radius: 10px;
+  /* background-color: rgb(255 255 255 / 50%); */
+  background-color: rgb(3 3 9 / 60%);
+  /* background-color: rgb(30 48 75 / 60%); */
+
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.form-title {
+  text-align: left;
+  font-size: 2vh;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  font-family: 'Montserrat';
+  font-weight: 200;
+  max-width: 100%;
+  color: #989898;
+}
+
+.form-group {
+  margin-bottom: 5%;
+  font-family: 'Montserrat';
+
+  max-width: 100%;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 1%;
+  font-size: 1.5vh;
+
+  max-width: 100%;
+}
+
+.form-input {
+  width: 100%;
+  padding: 2%;
+  font-size: 2vh;
+  border-bottom: 1px solid #fcf5e9;
+  /* border: 1px solid #fcf5e9; */
+  border-radius: 5px;
+  box-sizing: border-box;
+  resize: none;
+  background: rgb(0 0 0 / 30%);
+  /* background: transparent; */
+
+  max-width: 100%;
+}
+
+.form-input:focus {
+  /* border: 1px solid #98ce00; */
+  border-bottom: 1px solid #98ce00;
+}
+
+.form-submit-btn {
+  display: block;
+  width: 100%;
+  padding: 3%;
+  font-size: 1.2rem;
+  background-color: #2d496b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-family: 'Montserrat';
+
+  margin: 0;
+  max-width: 100%;
+}
+
+.form-submit-btn:focus {
+  background-color: #989898;
+}
+
+.form-submit-btn:hover {
+  background-color: #989898;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 0, 0, 0.8);
+  font-size: 12px;
+
+  max-width: 100%;
+}
+
+.error-message {
+  animation: fade 0.5s ease-in-out;
+  color: rgba(255, 0, 0, 0.8);
+  font-size: 12px;
+  position: absolute;
+  padding-top: 0.2vh;
+
+  max-width: 100%;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .contact-form {
+    width: 45%;
+    max-width:none;
+  }
+  .form-submit-btn {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .contact-form {
+    width: 80%;
+    max-width:none;
+  }
+  .form-submit-btn {
+    font-size: 1rem;
+  }
+}
+

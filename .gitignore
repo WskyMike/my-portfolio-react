@@ -1,0 +1,60 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.prettierrc
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.idea
+.vscode
+.http
+*.github
+.desktop
+
+# log files
+*.log
+*.pid
+*.lock
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# generated folders and files
+node_modules/
+bower_components/
+dist/
+build/
+tmp/
+.cache/
+*.swp
+
+# editor configuration
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ignore specific files in src/utils folder
+/src/utils/AsyncUnsplashApi.js
+/src/utils/WeatherApi_AccuWeather\ copy.js
+/src/utils/WeatherApi_OpenWeatherMap.js
+

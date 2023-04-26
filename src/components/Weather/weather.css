@@ -1,0 +1,241 @@
+.weather {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(3 3 9 / 60%);
+  backdrop-filter: blur(10px);
+  font-family: 'Montserrat';
+  padding: 2vh;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10vh 0 0 0;
+  max-width: 30vw;
+  color: #fcf5e9;
+}
+
+.weather__header {
+  text-align: left;
+  font-size: 2vh;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  font-family: 'Montserrat';
+  font-weight: 200;
+  max-width: 100%;
+  color: #989898;
+}
+
+.weather__search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative; /* добавлено */
+}
+
+.weather__search-input {
+  width: 65%;
+  padding: 2%;
+  font-size: 2vh;
+  border-bottom: 1px solid #fcf5e9;
+  border-radius: 3px;
+  resize: none;
+  background: rgb(0 0 0 / 30%);
+  max-width: 65%;
+}
+
+.weather__search-input:focus {
+  border-bottom: 1px solid #98ce00;
+}
+
+.weather__search-location-icon {
+  width: 3vw;
+  margin-right: 0.5vw;
+}
+
+.weather__search-input::placeholder {
+  color: #989898;
+  font-size: 1.7vh;
+}
+
+.weather__search-button {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../../images/icons8-right-arrow-50.png);
+  width: 3vw;
+  height: 4vh;
+  margin-left: -3vw; /* добавлено */
+  transition: transform 0.3s ease;
+}
+
+.weather__search-button:hover {
+  transform: translateX(1vh); /* изменено */
+}
+
+.weather__result-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather__result-location {
+  font-size: 28px;
+  margin: 0vh auto 1vh auto;
+}
+
+.weather__result-location-area {
+  margin: 0vh auto 1vh auto;
+  font-size: 13px;
+  font-weight: 200;
+  color: #989898;
+}
+
+.weather__result-temp {
+  font-size: 18px;
+  margin: 1vh auto 1vh auto;
+  font-size: 3rem;
+}
+
+.weather__result-realfeel {
+  margin: 0 auto 6vh auto;
+  font-weight: 200;
+  color: #989898;
+  text-align: center;
+}
+
+.weather__result-descr {
+  margin: 3vh auto 1vh auto;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+}
+
+.weather-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.weather__result-humiwind {
+  margin-left: 1vw;
+}
+
+.weather__result-icon {
+  width: 100px;
+  height: 100px;
+  margin: 1vh auto 1vh auto;
+}
+
+.humiwind-img {
+  width: 3vw;
+}
+
+.weather__loader {
+  width: 3vh;
+  height: 3vh;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, 0.6);
+  border-top: 5px solid #98ce00;
+  animation: spin 2s linear infinite;
+  position: fixed;
+  z-index: 999;
+  left: 78%;
+}
+
+.weather__not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather__not-found-img {
+  width: 55vh;
+}
+
+.weather__not-found-text {
+  text-align: center;
+}
+
+.found-text-top {
+  color: rgba(255, 0, 0, 0.8);
+  margin: 0vh 4vw 4vh 4vw;
+}
+
+.found-text-bottom {
+  color: #989898;
+  margin: 0vh 4vw 1vh 4vw;
+}
+
+@media screen and (max-width: 1280px) {
+  .weather__result-location {
+    font-size: 3vh;
+  }
+  .weather__result-location-area {
+    font-size: 1.8vh;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .weather__result-icon {
+    width: 25%;
+  }
+  .weather__result-location {
+    font-size: 2.5vh;
+  }
+  .weather__result-location-area {
+    font-size: 1.5vh;
+  }
+  .weather__result-descr {
+    font-size: 2vh;
+  }
+  .weather__result-realfeel {
+    font-size: 1.6vh;
+  }
+  .weather__search-button {
+    height: 3vh;
+  }
+  .weather__not-found-text {
+    font-size: 1.5vh;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .weather__search-input {
+    font-size: 1.2vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .weather__result-location {
+    font-size: 2vh;
+  }
+  .weather__result-location-area {
+    font-size: 1.2vh;
+  }
+  .weather__result-temp {
+    font-size: 6vh;
+  }
+  .weather__result-descr {
+    margin-top: 1vh;
+  }
+  .weather__result-realfeel {
+    font-size: 1.2vh;
+    margin-bottom: 3vh;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .weather {
+    width: 45%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .weather {
+    width: 80%;
+    max-width: none;
+  }
+  .weather__search-button {
+    width: 4vw;
+    margin-left: -4vw;
+  }
+}
