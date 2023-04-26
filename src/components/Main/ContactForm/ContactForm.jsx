@@ -102,7 +102,7 @@ function ContactForm() {
       className="contact-form"
       noValidate
     >
-      <h2 className="form-title">Пригласить на собес:</h2>
+      <h2 className="form-title">Пригласить на собес</h2>
       <div className="form-group">
         <label htmlFor="name" className="form-label">
           Имя:

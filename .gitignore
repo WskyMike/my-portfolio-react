@@ -52,6 +52,7 @@ tmp/
 .DS_Store
 Thumbs.db
 desktop.ini
+README.md
 
 # ignore specific files in src/utils folder
 /src/utils/AsyncUnsplashApi.js

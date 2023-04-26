@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import AppContexts from '../Сontexts/AppContexts';
 
 import Header from './Header/Header';
@@ -22,7 +22,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/pictures" element={<Pictures />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
       </div>
