@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Проект [Портфолио](https://wskymike.github.io/my-portfolio-react/) | Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 📜 Описание:
+Одностраничное мини-приложение на `React.js`. Созданно с применением `Create React App` и имеет переиспользуемые компоненты. Подготовка к деплою - `WebPack` Стилизовано на чистом CSS. Применена методология БЭМ. Приложение так же имеет респонсивную верстку под любые устройства с экраном просмотра от 2560px до 350px. Для статического анализа кода использовал ESLint. PostCSS добавляет вендорные пефиксы для кроссбраузерности при сборке проекта.
 
-## Available Scripts
+### ⚙️ Функционал:
+* SPA. Всё работает в рамках одной страницы без перезагрузок.
 
-In the project directory, you can run:
+* Погодный информер фактической погоды в любом городе мира. Написан с использованием бесплатной версии AccuWeather API.
 
-### `npm start`
+* Форма обратной связи. Формирует и отправляет со страницы письмо на мой e-mail через EmailJS API. Отличное решение, что бы миновать открытие почтового клиента пользователем и отправки письма "вручную".
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Карточки моих учебных проектов с ссылками на код и рабочие версии.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Поиск фотографий с использованием Unsplash API. Фото выводятся в "бесконечеую" ленту и подгружаются в зависимости от прокрутки страницы. Клик по карточке откроет поп-ап с полноразмерным фото, где есть описание, ссылка на автора и возможность скачивания. 
 
-### `npm test`
+* Можно ознакомиться и скачать моё резюме.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🥞 Стек:
 
-### `npm run build`
+`HTML5` `CSS3` `JavaScript ES6+` `React v.18` `React-router v.6` `Webpack` `PostCSS` `ESLint` `БЭМ (Nested)` 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 💽 Установка и запуск:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Склонировать репозиторий в текущую папку:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```git clone git@github.com:WskyMike/my-portfolio-react.git ./```
 
-### `npm run eject`
+2. Установить зависимости:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```npm install```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Запустить проект в режиме разработки:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```npm run start```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+В ближайших планах рефакторить и пререписать стили с применением `SASS`. Улучшить адаптивность.
