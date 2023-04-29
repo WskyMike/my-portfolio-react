@@ -24,20 +24,18 @@ function Main() {
           <h1 className="greeting__upper-text">
             <Typewriter
               options={{
-                autoStart: true,
+                autoStart: false,
                 loop: false,
                 cursor: '|',
+                delay: 0,
               }}
               onInit={(typewriter) => {
-                typewriter
-                  .pauseFor(100)
-                  .typeString('Привет, я Михаил.')
-                  .start();
+                typewriter.pauseFor(0).typeString('Привет, я Михаил.').start();
               }}
             />
           </h1>
-          <h2 className="greeting__lower-text delay">
-            И моя мечта стать <br />{' '}
+          <h2 className="greeting__lower-text">
+            И моя мечта стать <br />
             <span style={spanStyle}> {`< фронтенд-разработчиком / >`}</span>
           </h2>
         </div>

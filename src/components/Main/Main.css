@@ -83,7 +83,6 @@
   font-family: 'Montserrat';
   margin-top: 12vh;
   padding: 2vh;
-  border-radius: 10px;
   background-color: rgb(3 3 9 / 60%);
   /* background-color: rgb(30 48 75 / 60%); */
   /* box-shadow: 0 0 10px 1px rgb(0 0 0 / 25%); */
@@ -221,7 +220,7 @@
   }
 
   .main__left-side {
-    margin-left: 2vh;
+    margin-left: 1vh;
   }
 
   .greeting__upper-text {
@@ -238,7 +237,7 @@
   }
 
   .my-photo__img {
-    margin-top: 5vh;
+    margin-top: 4vh;
   }
 }
 
@@ -297,10 +296,16 @@
 
   .main__right-side {
     display: flex;
-    margin: 0;
+    margin-left: 1vh;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+  }
+  .main__aboutme-text {
+    font-size: 0.9em;
+  }
+  .main__aboutme-heading {
+    font-size: 1.2em;
   }
 }
 
@@ -308,12 +313,16 @@
   .my-photo__container {
   }
 
+  .weather__search-location-icon {
+    width: 8vw;
+  }
+
   .greeting__upper-text {
-    font-size: calc(27px + 1vmin);
+    font-size: calc(27px + 3vmin);
   }
 
   .greeting__lower-text {
-    font-size: calc(12px + 0vmin);
+    font-size: calc(13px + 1vmin);
   }
 
   .greeting {
@@ -326,13 +335,13 @@
   }
 
   .main__skills-img {
-    width: 6vw;
+    width: 7vw;
   }
-  .main__aboutme-heading {
-    font-size: 0.9em;
-  }
+}
 
-  .main__aboutme-text {
-    font-size: 0.75em;
+@media screen and (max-width: 380px) {
+  .my-photo__container {
+    left: 70%;
+    top: 29%;
   }
 }

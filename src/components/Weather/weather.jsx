@@ -84,7 +84,7 @@ const Weather = () => {
             <h3 className="weather__result-location-area">
               {`${weather.administrativeArea}`}
             </h3>
-            <div className="weather-container">
+            <div className="weather__result-container">
               <img
                 className="weather__result-icon"
                 src={weather.icon}
@@ -96,8 +96,8 @@ const Weather = () => {
             </div>
             <p className="weather__result-descr">{weather.description}</p>
             <p className="weather__result-realfeel">{`По ощущениям на улице ${weather.realfeel.toLowerCase()}`}</p>
-            <div className="weather-container">
-              <div className="weather-container">
+            <div className="weather__result-container">
+              <div className="weather__result-container">
                 <img
                   src={humidityImg}
                   alt="humidity img"
@@ -107,7 +107,7 @@ const Weather = () => {
                   {`${weather.humidity}`} %
                 </p>
               </div>
-              <div className="weather-container">
+              <div className="weather__result-container">
                 <img
                   src={windImg}
                   alt="humidity img"
