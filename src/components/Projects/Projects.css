@@ -11,14 +11,6 @@
   font-family: 'Montserrat';
 }
 
-@media (max-width: 768px) {
-  .projects__container {
-    grid-template-columns: 1fr;
-    gap: 3vw;
-    margin-top: 5vh;
-  }
-}
-
 .projects__card {
   border-radius: 5px;
   overflow: hidden;
@@ -113,4 +105,20 @@
 
 .projects__card-github:hover .github-img {
   transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .projects__container {
+    grid-template-columns: 1fr;
+    gap: 6vh;
+    margin-top: 15vh;
   }
+}
+
+@media (max-width: 425px) {
+  .projects__container {
+    gap: 3vh;
+    margin-top: 25vh;
+    padding: 0px 3vh 0px 3vh;
+  }
+}

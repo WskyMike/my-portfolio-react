@@ -1,5 +1,5 @@
 .search {
-  margin: 3vh 0vh 6vh 0vh;
+  margin: 6vh 0vh 6vh 0vh;
 }
 
 .search__container {
@@ -23,12 +23,12 @@
 .search__wrapper-tb {
   display: flex;
   padding: 0vh 1vh 0vh 1vh;
-  height: 5vw;
+  height: 9vh;
 }
 
 .search__input {
   width: 100%;
-  font-size: 38px;
+  font-size: 6vh;
   line-height: 1;
   font-family: 'Montserrat';
 }
@@ -66,4 +66,40 @@
 
 .search__button-img {
   height: 100%;
+}
+
+@media screen and (max-width: 850px) {
+  .search {
+    margin: 15vh 0vh 6vh 0vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search__input {
+    font-size: 6vh;
+  }
+  .search__wrapper-tb {
+    height: 7vh;
+   }
+}
+
+@media screen and (max-width: 660px) {
+  .search__input {
+    font-size: 5vh;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .search__input {
+    font-size: 4vh;
+  }
+  .search__wrapper-tb {
+   height: 6vh;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .search {
+    margin: 25vh 0vh 6vh 0vh;
+  }
 }

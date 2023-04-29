@@ -5,7 +5,6 @@
   backdrop-filter: blur(10px);
   font-family: 'Montserrat';
   padding: 2vh;
-  border-radius: 10px;
   overflow: hidden;
   margin: 10vh 0 0 0;
   max-width: 30vw;
@@ -28,7 +27,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  position: relative; /* добавлено */
+  position: relative;
 }
 
 .weather__search-input {
@@ -39,7 +38,6 @@
   border-radius: 3px;
   resize: none;
   background: rgb(0 0 0 / 30%);
-  max-width: 65%;
 }
 
 .weather__search-input:focus {
@@ -62,12 +60,12 @@
   background-image: url(../../images/icons8-right-arrow-50.png);
   width: 3vw;
   height: 4vh;
-  margin-left: -3vw; /* добавлено */
+  margin-left: -3vw;
   transition: transform 0.3s ease;
 }
 
 .weather__search-button:hover {
-  transform: translateX(1vh); /* изменено */
+  transform: translateX(1vh);
 }
 
 .weather__result-box {
@@ -107,7 +105,7 @@
   text-align: center;
 }
 
-.weather-container {
+.weather__result-container {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -185,9 +183,11 @@
   }
   .weather__result-descr {
     font-size: 2vh;
+    margin: 2vh auto 1vh auto;
   }
   .weather__result-realfeel {
     font-size: 1.6vh;
+    margin: 0 auto 3vh auto;
   }
   .weather__search-button {
     height: 3vh;
@@ -198,8 +198,8 @@
 }
 
 @media screen and (max-width: 960px) {
-  .weather__search-input {
-    font-size: 1.2vh;
+  .weather__result-descr {
+    margin: 1vh auto 1vh auto;
   }
 }
 
@@ -220,6 +220,9 @@
     font-size: 1.2vh;
     margin-bottom: 3vh;
   }
+  .weather__result-icon {
+    margin: 0vh auto 0vh auto;
+  }
 }
 
 @media screen and (max-width: 660px) {
@@ -231,11 +234,37 @@
 
 @media screen and (max-width: 580px) {
   .weather {
-    width: 80%;
+    width: 100%;
     max-width: none;
+    margin-top: 5vh;
   }
   .weather__search-button {
-    width: 4vw;
-    margin-left: -4vw;
+    width: 8vw;
+    height: 4vh;
+    transform: translateX(-75%);
+}
+  .weather__search-location-icon {
+    width: 6vw;
+  }
+  .weather__search-input {
+    width: 95%;
+  }
+  .weather__loader {
+    left: 88%;
+  }
+  .humiwind-img {
+    width: 9vw;
+  }
+  .weather__result-location {
+    font-size: 3vh;
+  }
+  .weather__result-location-area {
+    font-size: 1.8vh;
+  }
+  .weather__result-descr {
+    font-size: 2.5vh;
+  }
+  .weather__result-realfeel {
+    font-size: 2vh;
   }
 }

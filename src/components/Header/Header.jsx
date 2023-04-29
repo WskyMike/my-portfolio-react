@@ -12,22 +12,14 @@ function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setTimeout(() => {
-        const currentScrollPos = window.scrollY;
-        setIsHeaderVisible(currentScrollPos === 0);
-      }, 200);
+      const currentScrollPos = window.scrollY;
+      setIsHeaderVisible(currentScrollPos < 70);
     };
 
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navLinks = [
-    { text: 'Главная', path: '/' },
-    { text: 'Мои проекты', path: '/projects' },
-    { text: 'Поиск картинок', path: '/pictures' },
-  ];
 
   return (
     <header className={`header ${isHeaderVisible ? '' : 'hidden'}`}>

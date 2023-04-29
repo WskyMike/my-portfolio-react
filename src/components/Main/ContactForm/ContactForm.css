@@ -2,7 +2,6 @@
   max-width: 30vw;
   margin: 10vh 0 0 0;
   padding: 2vh;
-  border-radius: 10px;
   /* background-color: rgb(255 255 255 / 50%); */
   background-color: rgb(3 3 9 / 60%);
   /* background-color: rgb(30 48 75 / 60%); */
@@ -64,10 +63,9 @@
   display: block;
   width: 100%;
   padding: 3%;
-  font-size: 1.2rem;
+  font-size: 3vh;
   background-color: #2d496b;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   font-family: 'Montserrat';
@@ -111,10 +109,16 @@
   }
 }
 
+@media screen and (max-width: 850px) {
+  /* .form-submit-btn {
+    font-size: 1rem;
+  } */
+}
+
 @media screen and (max-width: 660px) {
   .contact-form {
     width: 45%;
-    max-width:none;
+    max-width: none;
   }
   .form-submit-btn {
     font-size: 0.8rem;
@@ -123,11 +127,11 @@
 
 @media screen and (max-width: 580px) {
   .contact-form {
-    width: 80%;
-    max-width:none;
+    width: 100%;
+    max-width: none;
+    margin-top: 5vh;
   }
   .form-submit-btn {
     font-size: 1rem;
   }
 }
-
