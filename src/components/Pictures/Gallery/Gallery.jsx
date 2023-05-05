@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import React, { useState, useEffect } from 'react';
-import AppContexts from '../../../Сontexts/AppContexts';
+import React, { useState, useEffect } from "react";
+import AppContexts from "../../../Сontexts/AppContexts";
 
-import './Gallery.scss';
-import UnsplashApi from '../../../utils/UnsplashApi';
-import Loader from '../../Loader/Loader';
-import ScrollToTopButton from '../ScrollToTopButton/ToTopButton';
-import ImagePopup from '../ImagePopup/ImagePopup';
+import "./Gallery.scss";
+import UnsplashApi from "../../../utils/UnsplashApi";
+import Loader from "../../Loader/Loader";
+import ScrollToTopButton from "../ScrollToTopButton/ToTopButton";
+import ImagePopup from "../ImagePopup/ImagePopup";
 
 function Gallery({ query }) {
   // Состояние для хранения загруженных фотографий
@@ -77,9 +77,9 @@ function Gallery({ query }) {
 
   // Добавляем обработчик скролла при монтировании компонента
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [currentPage, loading, query, totalPages]);
 
@@ -96,7 +96,7 @@ function Gallery({ query }) {
           >
             <img
               className="gallery__img"
-              src={photo.urls.raw + '&w=800'}
+              src={photo.urls.raw + "&w=800"}
               alt={photo.alt_description}
             />
             {/* <div className="gallery__number">{index + 1}</div> */}

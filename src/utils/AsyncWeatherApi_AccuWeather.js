@@ -1,4 +1,4 @@
-const apiKey = '79YI8GKwgrAAiHQImyU5oGjBhNiqGgUP';
+const apiKey = "79YI8GKwgrAAiHQImyU5oGjBhNiqGgUP";
 
 export const getWeather = async (city) => {
   try {
@@ -7,8 +7,8 @@ export const getWeather = async (city) => {
 
     // Отправляем запрос и ждем ответ
     const response = await fetch(url, {
-      method: 'GET',
-      'Accept-Language': 'ru-RU',
+      method: "GET",
+      "Accept-Language": "ru-RU",
     });
 
     // Проверяем, что ответ успешный
@@ -27,7 +27,7 @@ export const getWeather = async (city) => {
     const countryId = data[0].Country.ID;
     const administrativeArea =
       data[0].AdministrativeArea.EnglishName +
-      ' ' +
+      " " +
       data[0].AdministrativeArea.EnglishType.toLowerCase();
 
     // Формируем URL запроса к API для получения данных о погоде
@@ -55,9 +55,9 @@ export const getWeather = async (city) => {
       description: weatherData[0].WeatherText,
       wind: weatherData[0].Wind.Speed.Metric.Value,
       humidity: weatherData[0].RelativeHumidity,
-      icon: require('../images/weather_icons/' +
+      icon: require("../images/weather_icons/" +
         weatherData[0].WeatherIcon +
-        '.svg'),
+        ".svg"),
       // icon: `https://developer.accuweather.com/sites/default/files/${weatherData[0].WeatherIcon}.svg`,
     };
     // console.log(getWeather);
@@ -65,7 +65,7 @@ export const getWeather = async (city) => {
     // Возвращаем объект с данными о погоде
     return getWeather;
   } catch (error) {
-    console.error('Ошибка в получении данных в компоненте WeatherAPI', error);
+    console.error("Ошибка в получении данных в компоненте WeatherAPI", error);
     return { error };
   }
 };

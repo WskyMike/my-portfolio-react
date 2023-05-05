@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import React from 'react';
-import './Contacts.scss';
-import telegram from '../../images/telegram.svg';
-import vk from '../../images/vk.svg';
-import insta from '../../images/insta.svg';
-import github from '../../images/github.svg';
-import codewars from '../../images/codewars.svg';
+import React from "react";
+import "./Contacts.scss";
+import telegram from "../../images/telegram.svg";
+import vk from "../../images/vk.svg";
+import insta from "../../images/insta.svg";
+import github from "../../images/github.svg";
+import codewars from "../../images/codewars.svg";
 
 function Contacts() {
   return (

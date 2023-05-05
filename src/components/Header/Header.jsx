@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
-import './Header.scss';
-import skobka from '../../images/skobka.svg';
-import resume from '../../images/Sosnin_MI_resume.pdf';
+import "./Header.scss";
+import skobka from "../../images/skobka.svg";
+import resume from "../../images/Sosnin_MI_resume.pdf";
 
 function Header() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true); // Изчезающий хедер
@@ -19,8 +19,8 @@ function Header() {
     };
 
     handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Клик по любому item закрывает меню
@@ -29,7 +29,7 @@ function Header() {
   };
 
   return (
-    <header className={`header ${isHeaderVisible ? '' : 'hidden'}`}>
+    <header className={`header ${isHeaderVisible ? "" : "hidden"}`}>
       <Navbar
         expand="lg"
         bg="transparent"
@@ -51,7 +51,7 @@ function Header() {
             id="basic-navbar-nav"
             className="me-5 justify-content-end"
           >
-            <span className="header__decor-brace"> {'['} </span>
+            <span className="header__decor-brace"> {"["} </span>
             <Nav className="ml-auto gap-4">
               <Nav.Link
                 as={NavLink}
@@ -86,7 +86,7 @@ function Header() {
                 <span className="highlighted-text-nav"> 03.</span>Резюме
               </a>
             </Nav>
-            <span className="header__decor-brace"> {']'} </span>
+            <span className="header__decor-brace"> {"]"} </span>
           </Navbar.Collapse>
         </Container>
       </Navbar>

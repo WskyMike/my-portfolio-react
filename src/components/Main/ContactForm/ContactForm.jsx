@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
-import './ContactForm.scss';
+import React, { useState } from "react";
+import emailjs from "emailjs-com";
+import "./ContactForm.scss";
 
 import {
   PUBLIC_KEY,
   SERVICE_ID,
   TEMPLATE_ID,
   emailRegex,
-} from '../../../utils/constants';
+} from "../../../utils/constants";
 
 function ContactForm() {
   // Поля ввода
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   // Валидация
-  const [nameError, setNameError] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [emailRegExpError, setEmailRegExpError] = useState('');
-  const [messageError, setMessageError] = useState('');
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [emailRegExpError, setEmailRegExpError] = useState("");
+  const [messageError, setMessageError] = useState("");
   const [showEmailError, setShowEmailError] = useState(false);
   // Состояние кнопки submit
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -35,37 +35,37 @@ function ContactForm() {
 
     // Проверяем, что поле "Имя" не пустое
     if (!name) {
-      setNameError('Пожалуйста напишите ваше имя');
+      setNameError("Пожалуйста напишите ваше имя");
       isFormValid = false;
     } else {
-      setNameError('');
+      setNameError("");
     }
 
     // Проверяем, что поле "E-mail" не пустое и соответствует формату email-адреса
     if (!email) {
-      setEmailError('Пожалуйста напишите вашу почту');
+      setEmailError("Пожалуйста напишите вашу почту");
       isFormValid = false;
     } else {
-      setEmailError('');
+      setEmailError("");
       // Добавляем проверку соответствия формату email-адреса только в случае, если поле не пустое
       if (!validateEmail(email)) {
-        setEmailRegExpError('Некорректный email-адрес');
+        setEmailRegExpError("Некорректный email-адрес");
         setShowEmailError(true);
         isFormValid = false;
         setTimeout(() => {
           setShowEmailError(false);
         }, 3000);
       } else {
-        setEmailRegExpError('');
+        setEmailRegExpError("");
       }
     }
 
     // Проверяем, что поле "Сообщение" не пустое
     if (!message) {
-      setMessageError('Пожалуйста напишите мне что-нибудь');
+      setMessageError("Пожалуйста напишите мне что-нибудь");
       isFormValid = false;
     } else {
-      setMessageError('');
+      setMessageError("");
     }
 
     if (isFormValid) {
@@ -84,13 +84,13 @@ function ContactForm() {
         .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
         .then((res) => {
           // console.log('SUCCESS!', response.status, response.text);
-          res.status === 200 && setName('');
-          setEmail('');
-          setMessage('');
+          res.status === 200 && setName("");
+          setEmail("");
+          setMessage("");
           setIsSubmitted(false);
         })
         .catch((error) => {
-          console.log('FAILED...', error);
+          console.log("FAILED...", error);
         });
     }
   };
@@ -135,7 +135,7 @@ function ContactForm() {
         />
         {showEmailError && (
           <div className="contact-form__error-message">{emailRegExpError}</div>
-        )}{' '}
+        )}{" "}
       </div>
       <div className="contact-form__group mb-4">
         <label htmlFor="message" className="contact-form__label">
@@ -156,7 +156,7 @@ function ContactForm() {
           type="submit"
           className="contact-form__submit-btn btn btn-primary"
           disabled
-          style={{ backgroundColor: '#98CE00', color: '#000', opacity: '1' }}
+          style={{ backgroundColor: "#98CE00", color: "#000", opacity: "1" }}
         >
           Спасибо! 🖤
         </button>

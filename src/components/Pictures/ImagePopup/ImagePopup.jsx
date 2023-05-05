@@ -1,22 +1,22 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
-import './ImagePopup.scss';
+import "./ImagePopup.scss";
 
 function ImagePopup({ photo, onClose }) {
   // Отключаем скролл при открытии
   useEffect(() => {
     if (photo) {
-      document.body.style.overflow = 'hidden'; // отключаем прокрутку
+      document.body.style.overflow = "hidden"; // отключаем прокрутку
     } else {
-      document.body.style.overflow = 'auto'; // включаем прокрутку
+      document.body.style.overflow = "auto"; // включаем прокрутку
     }
   }, [photo]);
 
   // Закрытие по клику на оверлей
   const handleOverlayClick = (e) => {
-    if (e.target.classList.contains('popup')) {
+    if (e.target.classList.contains("popup")) {
       onClose();
     }
   };
@@ -24,19 +24,19 @@ function ImagePopup({ photo, onClose }) {
   // Закрытие по ESC
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         onClose();
       }
     };
-    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
   return (
     <div
-      className={`popup popup_style_fullscreen-img ${photo && 'popup_opened'}`}
+      className={`popup popup_style_fullscreen-img ${photo && "popup_opened"}`}
       onClick={handleOverlayClick}
     >
       <div
@@ -58,7 +58,7 @@ function ImagePopup({ photo, onClose }) {
           >
             {photo?.user?.name}
           </button>
-        </h3>{' '}
+        </h3>{" "}
       </div>
     </div>
   );

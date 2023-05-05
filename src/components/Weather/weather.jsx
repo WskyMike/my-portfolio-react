@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import './weather.scss';
-import { getWeather } from '../../utils/AsyncWeatherApi_AccuWeather';
+import React, { useState } from "react";
+import "./weather.scss";
+import { getWeather } from "../../utils/AsyncWeatherApi_AccuWeather";
 
 // import locationIcon from '../../images/icons8-location-64.png';
-import humidityImg from '../../images/weather_icons/hygrometer.svg';
-import windImg from '../../images/weather_icons/wind.svg';
-import Loader from '../Loader/Loader';
-import NotFoundImg from '../../images/page-not-found-5.png';
-import SearchButtonImg from '../../images/skobka.svg';
+import humidityImg from "../../images/weather_icons/hygrometer.svg";
+import windImg from "../../images/weather_icons/wind.svg";
+import Loader from "../Loader/Loader";
+import NotFoundImg from "../../images/page-not-found-5.png";
+import SearchButtonImg from "../../images/skobka.svg";
 
 const Weather = () => {
   // Стейт для хранения названия города
-  const [city, setCity] = useState('');
+  const [city, setCity] = useState("");
   // Стейт для хранения текущей погоды в указанном городе
   const [weather, setWeather] = useState(null);
   // Стейт загрузки
@@ -36,7 +36,7 @@ const Weather = () => {
         setError(false); // Если была до этого ошибка - убираем
         setWeather(data);
       } catch (error) {
-        console.error('Ошибка в получении данных в компоненте Weather', error);
+        console.error("Ошибка в получении данных в компоненте Weather", error);
         setError(true); // Выводим not found
         setWeather(null);
       }
@@ -111,7 +111,7 @@ const Weather = () => {
             </div>
             <div className="row weather__result-secondary">
               <div className="col weather__result-secondary-container">
-                {' '}
+                {" "}
                 <img
                   src={humidityImg}
                   alt="humidity img"
@@ -122,7 +122,7 @@ const Weather = () => {
                 </p>
               </div>
               <div className="col weather__result-secondary-container">
-                {' '}
+                {" "}
                 <img
                   src={windImg}
                   alt="winddddd img"

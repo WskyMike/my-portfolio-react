@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import React, { useState } from "react";
+import { Form, Button } from "react-bootstrap";
 
-import './Search.scss';
-import SearchButton from '../../../images/icons8-search-128.png';
+import "./Search.scss";
+import SearchButton from "../../../images/icons8-search-128.png";
 
 function Search({ onSearch }) {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   // console.log(query); // query TEST
 
   const handleInputChange = (event) => {

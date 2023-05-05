@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import Search from './Search/Search';
-import Gallery from './Gallery/Gallery';
-import './Pictures.scss';
+import Search from "./Search/Search";
+import Gallery from "./Gallery/Gallery";
+import "./Pictures.scss";
 
 function Pictures() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
   const handleSearch = (newQuery) => {
     setQuery(newQuery);

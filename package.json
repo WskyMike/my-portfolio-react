@@ -68,5 +68,8 @@
     "plugins": {
       "autoprefixer": {}
     }
+  },
+  "prettier": {
+    "endOfLine": "lf"
   }
 }
