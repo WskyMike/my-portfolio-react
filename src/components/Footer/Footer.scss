@@ -1,6 +1,8 @@
+@import '../../scss/_shared.scss';
+
 .footer {
   margin-top: 10vh;
-  color: #989898;
+  color: $color--global-gray;
   font-family: 'JetBrains Mono';
   font-weight: 200;
   font-size: 1rem;

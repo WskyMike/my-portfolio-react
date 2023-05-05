@@ -5,12 +5,11 @@ import AppContexts from '../Сontexts/AppContexts';
 import Header from './Header/Header';
 import Main from './Main/Main';
 import Footer from './Footer/Footer';
-import NotFound from './404/404';
 import Contacts from './Contacts/Contacts';
 import Pictures from './Pictures/Pictures';
 import Projects from './Projects/Projects';
 
-import './App.css';
+import './App.scss';
 
 function App() {
   return (

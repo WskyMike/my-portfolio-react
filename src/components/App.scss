@@ -1,0 +1,38 @@
+@import '../scss/shared';
+
+// Глобальные стили
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 90%;
+}
+
+.highlighted-text {
+  @include highlighted-text($color--global-green);
+}
+
+.form-control, .form-control-sm {
+  border: none;
+  border-bottom: 1px solid $color--global-text;
+  color: $color--global-text;
+  &:focus {
+    background: rgb(0 0 0 / 60%);
+    // background: transparent;
+    box-shadow: none;
+    border-bottom: 1px solid #98ce00;
+    color: $color--global-text;
+  }
+  &:disabled {
+    background: rgb(0 0 0 / 40%);
+    box-shadow: none;
+    border-bottom: 1px solid #98ce00;
+    opacity: 1;
+  }
+}
+
+#message-area {
+  resize: none;
+}

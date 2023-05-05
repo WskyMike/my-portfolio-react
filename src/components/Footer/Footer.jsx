@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 // import { useLocation } from 'react-router-dom';
 import AppContexts from '../../Сontexts/AppContexts';
 
-import './Footer.css';
+import './Footer.scss';
 
 function Footer() {
   const { loading } = useContext(AppContexts);

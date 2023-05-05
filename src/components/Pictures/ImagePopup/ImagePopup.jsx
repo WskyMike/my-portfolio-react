@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useEffect } from 'react';
 
-import './ImagePopup.css';
+import './ImagePopup.scss';
 
 function ImagePopup({ photo, onClose }) {
   // Отключаем скролл при открытии

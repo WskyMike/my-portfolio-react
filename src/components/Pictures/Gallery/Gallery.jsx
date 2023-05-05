@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import AppContexts from '../../../Сontexts/AppContexts';
 
-import './Gallery.css';
+import './Gallery.scss';
 import UnsplashApi from '../../../utils/UnsplashApi';
 import Loader from '../../Loader/Loader';
 import ScrollToTopButton from '../ScrollToTopButton/ToTopButton';

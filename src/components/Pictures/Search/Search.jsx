@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { Form, Button } from 'react-bootstrap';
 
-import './Search.css';
-import SearchButtonSvg from '../../../images/search.png';
-// import { ReactComponent as SearchButtonSvg } from '../../../images/search.svg';
+import './Search.scss';
+import SearchButton from '../../../images/icons8-search-128.png';
 
 function Search({ onSearch }) {
   const [query, setQuery] = useState('');
@@ -17,44 +17,32 @@ function Search({ onSearch }) {
     onSearch(query);
   };
 
-  // // Стирание данных после потери фокуса
-  // const handleBlur = () => {
-  //   setQuery('');
-  // };
-
   return (
     <section className="search">
       <div className="search__container">
-        <form
-          className="search__form"
-          onSubmit={handleSubmit}
-          autoComplete="off"
-          noValidate
-        >
-          <div className="search__wrapper-tb">
-            <input
+        <Form onSubmit={handleSubmit} noValidate>
+          <Form.Group className="search__wrapper-tb">
+            <Form.Control
               className="search__input"
               type="text"
-              autoComplete="off"
               placeholder="Unsplash this . . ."
               value={query}
               onChange={handleInputChange}
-              // onBlur={handleBlur}
               required
-            ></input>
-            <button
-              className="search__button"
+            />
+            <Button
               type="submit"
               aria-label="search-button"
+              className="search__button"
             >
               <img
-                src={SearchButtonSvg}
+                src={SearchButton}
                 alt="search icon"
                 className="search__button-img"
               />
-            </button>
-          </div>
-        </form>
+            </Button>
+          </Form.Group>
+        </Form>
       </div>
     </section>
   );

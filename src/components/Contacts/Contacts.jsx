@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React from 'react';
-import './Contacts.css';
+import './Contacts.scss';
 import telegram from '../../images/telegram.svg';
 import vk from '../../images/vk.svg';
 import insta from '../../images/insta.svg';
