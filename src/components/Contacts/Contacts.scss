@@ -1,0 +1,59 @@
+@import '../../scss/_shared.scss';
+
+.social {
+  left: 1.5%;
+  bottom: 0%;
+  position: fixed;
+  float: left;
+}
+
+.social__wrapper {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+}
+
+.social__wrapper::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 100px;
+  margin: 0px auto;
+  background-color: $color--global-text;
+}
+
+.social__item {
+}
+
+.social__icon {
+  width: 30px;
+  transition: transform 0.6s ease-in-out;
+}
+
+.social__icon:hover {
+  transform: rotate(360deg);
+}
+
+.social__icon:hover:not(:active) {
+  transform: rotate(360deg) initial;
+}
+
+@media screen and (max-width: 1024px) {
+  .social__icon {
+    width: 20px;
+  }
+
+  .social__wrapper::after {
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .social__wrapper::after {
+    height: 40px;
+  }
+}
