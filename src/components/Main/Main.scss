@@ -1,0 +1,105 @@
+@import '../../scss/_shared.scss';
+
+.fade-in {
+  @include fade-in__add-duration(0.5s);
+}
+
+.main {
+  color: $color--global-text;
+  margin: 12vh auto;
+}
+
+.myphoto {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+
+  &__img {
+    width: auto;
+    height: 45vh;
+    -webkit-clip-path: polygon(0 0, 100% 4vh, 100% 100%, 0 calc(100% - 4vh));
+    clip-path: polygon(0 0, 100% 4vh, 100% 100%, 0 calc(100% - 4vh));
+    opacity: 1;
+
+    @media (max-width: 992px) {
+      height: 40vh;
+    }
+
+    @media (max-width: 768px) {
+      margin-top: 3vh;
+    }
+
+    @media (max-width: 576px) {
+      height: 37vh;
+    }
+  }
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5vh;
+  padding-left: 5vw;
+
+  &__upper-text {
+    font-size: 9vmin;
+    font-family: 'JetBrains Mono';
+    font-weight: 600;
+  }
+  &__lower-text {
+    font-family: 'JetBrains Mono';
+    line-height: 1.3;
+    font-weight: 200;
+    font-size: calc(14px + 2vmin);
+  }
+}
+
+.informers {
+  padding-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 5vh;
+}
+
+.aboutme {
+  padding-left: 5vw;
+  padding-top: 8vh;
+
+  @media (max-width: 576px) {
+    padding-left: 4vw;
+    padding-right: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(3 3 9 / 30%);
+    border-radius: 10px;
+    padding: 2vh 1vw 2vh 1vw;
+  }
+
+  &__heading {
+    @include formtitle(3.5vh);
+  }
+
+  &__text {
+    @include textarea__add-font-weight(500);
+  }
+
+  &__skills {
+    margin: 0 auto;
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 2vw;
+      padding-top: 2vh;
+    }
+    &-img {
+      width: 3vw;
+    }
+  }
+}

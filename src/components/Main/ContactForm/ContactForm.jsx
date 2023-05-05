@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import './ContactForm.css';
+import './ContactForm.scss';
 
 import {
   PUBLIC_KEY,
@@ -97,14 +97,16 @@ function ContactForm() {
 
   return (
     <form
-      id="contactForm"
+      id="contact-form"
       onSubmit={handleSubmit}
       className="contact-form"
       noValidate
     >
-      <h2 className="form-title">Пригласить на собес</h2>
-      <div className="form-group">
-        <label htmlFor="name" className="form-label">
+      <h2 className="contact-form__title">
+        <span className="highlighted-text">Пригласить</span> на собес
+      </h2>
+      <div className="contact-form__group mb-4">
+        <label htmlFor="name" className="contact-form__label">
           Имя:
         </label>
         <input
@@ -112,14 +114,14 @@ function ContactForm() {
           id="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="form-input"
+          className="contact-form__input form-control"
           required
           placeholder={nameError}
           autoComplete="off"
         />
       </div>
-      <div className="form-group">
-        <label htmlFor="email" className="form-label">
+      <div className="contact-form__group mb-4">
+        <label htmlFor="email" className="contact-form__label">
           E-mail:
         </label>
         <input
@@ -127,38 +129,42 @@ function ContactForm() {
           id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="form-input"
+          className="contact-form__input form-control"
           required
           placeholder={emailError}
         />
         {showEmailError && (
-          <div className="error-message">{emailRegExpError}</div>
+          <div className="contact-form__error-message">{emailRegExpError}</div>
         )}{' '}
       </div>
-      <div className="form-group">
-        <label htmlFor="message" className="form-label">
+      <div className="contact-form__group mb-4">
+        <label htmlFor="message" className="contact-form__label">
           Сообщение:
         </label>
         <textarea
-          id="message"
+          id="message-area"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="form-input"
+          className="contact-form__input form-control"
           required
           placeholder={messageError}
+          rows="3"
         ></textarea>
       </div>
       {isSubmitted ? (
         <button
           type="submit"
-          className="form-submit-btn"
+          className="contact-form__submit-btn btn btn-primary"
           disabled
-          style={{ backgroundColor: '#98CE00', color: '#000' }}
+          style={{ backgroundColor: '#98CE00', color: '#000', opacity: '1' }}
         >
           Спасибо! 🖤
         </button>
       ) : (
-        <button type="submit" className="form-submit-btn">
+        <button
+          type="submit"
+          className="contact-form__submit-btn btn btn-primary"
+        >
           Отправить 👌
         </button>
       )}

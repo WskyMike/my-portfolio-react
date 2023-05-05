@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Search from './Search/Search';
 import Gallery from './Gallery/Gallery';
-import './Pictures.css';
+import './Pictures.scss';
 
 function Pictures() {
   const [query, setQuery] = useState('');

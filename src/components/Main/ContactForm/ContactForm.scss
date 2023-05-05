@@ -1,0 +1,37 @@
+@import '../../../scss/_shared.scss';
+
+.contact-form {
+  @include form-base_add-width(85%);
+  @media (max-width: 576px) {
+    width: 100%;
+    margin-left: 2vh;
+  }
+
+  &__title {
+    @include formtitle(2vh);
+  }
+
+  &__group {
+    @include form-input-group;
+  }
+
+  &__label {
+    @include form-label;
+  }
+
+  &__input {
+    @include form-input;
+    &::placeholder {
+      color: rgba(255, 0, 0, 0.8);
+      font-size: 1.8vh;
+    }
+  }
+
+  &__error-message {
+    @include error-message_add-paddings-left-top(7.5vh, 1vw);
+  }
+
+  &__submit-btn {
+    @include button-submit-small;
+  }
+}

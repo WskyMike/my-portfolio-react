@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import './weather.css';
+import './weather.scss';
 import { getWeather } from '../../utils/AsyncWeatherApi_AccuWeather';
 
-import locationIcon from '../../images/icons8-location-64.png';
+// import locationIcon from '../../images/icons8-location-64.png';
 import humidityImg from '../../images/weather_icons/hygrometer.svg';
 import windImg from '../../images/weather_icons/wind.svg';
 import Loader from '../Loader/Loader';
 import NotFoundImg from '../../images/page-not-found-5.png';
+import SearchButtonImg from '../../images/skobka.svg';
 
 const Weather = () => {
   // Стейт для хранения названия города
@@ -22,22 +23,25 @@ const Weather = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     setLoading(true);
-    try {
-      // Запрос на получение текущей погоды для указанного местоположения
-      const data = await getWeather(city);
-      // Ловим ошибку в API запросе
-      if (data.error) {
-        throw new Error(data.error);
+
+    setTimeout(async () => {
+      try {
+        // Запрос на получение текущей погоды для указанного местоположения
+        const data = await getWeather(city);
+        // Ловим ошибку в API запросе
+        if (data.error) {
+          throw new Error(data.error);
+        }
+        // Обновляем стейт с полученной погодой
+        setError(false); // Если была до этого ошибка - убираем
+        setWeather(data);
+      } catch (error) {
+        console.error('Ошибка в получении данных в компоненте Weather', error);
+        setError(true); // Выводим not found
+        setWeather(null);
       }
-      // Обновляем стейт с полученной погодой
-      setError(false); // Если была до этого ошибка - убираем
-      setWeather(data);
-    } catch (error) {
-      console.error('Ошибка в получении данных в компоненте Weather', error);
-      setError(true); // Выводим not found
-      setWeather(null);
-    }
-    setLoading(false);
+      setLoading(false);
+    }, 1500);
   };
 
   // Отслеживаем ввод в строке поиска
@@ -47,22 +51,20 @@ const Weather = () => {
 
   return (
     <section className="weather">
-      <h1 className="weather__header">Погодка</h1>
+      <h1 className="weather__header">
+        <span className="highlighted-text">Погода</span> в твоем городе
+      </h1>
       <div className="weather__container">
-        <form className="weather__search-box" onSubmit={handleSearch}>
-          <img
-            src={locationIcon}
-            alt="location icon"
-            className="weather__search-location-icon"
-          />
+        <form className="weather__search-box mb-3" onSubmit={handleSearch}>
           <input
-            className="weather__search-input"
+            className="weather__search-input form-control"
             type="text"
             autoComplete="off"
             placeholder="Введите город"
             value={city}
             onChange={handleInputChange}
             required
+            disabled={!!loading}
           ></input>
           {loading ? (
             <div className="weather__loader">
@@ -70,63 +72,75 @@ const Weather = () => {
             </div>
           ) : (
             <button
-              className="weather__search-button"
+              className="weather__search-button btn"
               type="submit"
               aria-label="search-button"
-            />
+              hidden={!!loading}
+            ></button>
           )}
         </form>
         {weather && (
-          <div className="weather__result-box">
-            <h2 className="weather__result-location">
-              {`${weather.city}, ${weather.country}`}
-            </h2>
-            <h3 className="weather__result-location-area">
-              {`${weather.administrativeArea}`}
-            </h3>
-            <div className="weather__result-container">
-              <img
-                className="weather__result-icon"
-                src={weather.icon}
-                alt="weather icon"
-              />
-              <p className="weather__result-temp">
-                {`${Math.floor(weather.temperature)}`}&deg;C
-              </p>
+          <div className="container weather__result-box">
+            <div className="row weather__result-location text-center">
+              <h2 className="weather__result-location-city text-break fs-3">
+                {`${weather.city}, ${weather.country}`}
+              </h2>
+              <h3 className="weather__result-location-area fs-6 fw-lighter">
+                {`${weather.administrativeArea}`}
+              </h3>
             </div>
-            <p className="weather__result-descr">{weather.description}</p>
-            <p className="weather__result-realfeel">{`По ощущениям на улице ${weather.realfeel.toLowerCase()}`}</p>
-            <div className="weather__result-container">
-              <div className="weather__result-container">
+            <div className="row weather__result-primary">
+              <div className="col">
+                <img
+                  className="weather__result-primary-icon"
+                  src={weather.icon}
+                  alt="weather icon"
+                />
+              </div>
+              <div className="col">
+                <p className="weather__result-primary-temp">
+                  {`${Math.floor(weather.temperature)}`}&deg;C
+                </p>
+              </div>
+            </div>
+            <div className="row weather__result-text text-center">
+              <p className="weather__result-text-descr fs-5">
+                {weather.description}
+              </p>
+              <p className="weather__result-text-realfeel fs-6 fw-lighter">{`По ощущениям на улице ${weather.realfeel.toLowerCase()}`}</p>
+            </div>
+            <div className="row weather__result-secondary">
+              <div className="col weather__result-secondary-container">
+                {' '}
                 <img
                   src={humidityImg}
                   alt="humidity img"
-                  className="humiwind-img"
+                  className="weather__result-secondary-humiwind-icon"
                 />
-                <p className="weather__result-humiwind">
+                <p className="weather__result-secondary-humiwind-text">
                   {`${weather.humidity}`} %
                 </p>
               </div>
-              <div className="weather__result-container">
+              <div className="col weather__result-secondary-container">
+                {' '}
                 <img
                   src={windImg}
-                  alt="humidity img"
-                  className="humiwind-img"
+                  alt="winddddd img"
+                  className="weather__result-secondary-humiwind-icon"
                 />
-                <p className="weather__result-humiwind">
-                  {`${Math.round(weather.wind / 3.6)}`} м/с
+                <p className="weather__result-secondary-humiwind-text">
+                  {`${Math.round(weather.wind / 3.6)}`} м/c
                 </p>
               </div>
             </div>
           </div>
         )}
-
         {error && (
           <div className="weather__not-found">
-            <p className="weather__not-found-text found-text-top">
+            <p className="weather__not-found-text-top">
               Местоположение не найдено.
             </p>
-            <p className="weather__not-found-text found-text-bottom">
+            <p className="weather__not-found-text-bottom">
               Попробуйте поменять язык ввода и\или добавить страну.
             </p>
             <img

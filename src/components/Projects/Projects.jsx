@@ -1,31 +1,32 @@
 import React from 'react';
-import './Projects.css';
+import { Card, CardGroup, Container } from 'react-bootstrap';
+
+import './Projects.scss';
 
 import { PROJECTS_INFO } from '../../utils/projectsInfo';
 
 function Projects() {
   return (
     <section className="projects">
-      <ul className="projects__container">
-        {PROJECTS_INFO.map((project) => (
-          <li key={project.id} className="projects__card">
-            <a
-              className="projects__card-meta"
-              href={project.websiteUrl}
-              target="_blank"
-              rel="noreferrer"
+      <Container>
+        <CardGroup className="projects__container">
+          {PROJECTS_INFO.map((project) => (
+            <Card
+              key={project.id}
+              className={`projects__card ${project.class}`}
             >
-              <img
+              <Card.Img
+                variant="top"
                 src={project.imageUrl}
                 alt={project.title}
                 className="projects__card-img"
               />
-              <div className="projects__card-description">
+              <Card.Body className="projects__card-description">
                 <a
                   href={project.githubUrl}
                   className="projects__card-github"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <img
                     src={project.githubIconUrl}
@@ -33,8 +34,17 @@ function Projects() {
                     className="projects__card-tech-img github-img"
                   />
                 </a>
-                <h2 className="projects__card-title">{project.title}</h2>
-                <p className="projects__card-text">{project.description}</p>
+                <Card.Title
+                  className="projects__card-title"
+                  onClick={() => window.open(project.websiteUrl, '_blank')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {project.title}
+                </Card.Title>
+                <Card.Text className="projects__card-text">
+                  {project.description}
+                </Card.Text>
                 <div className="projects__card-tech">
                   {project.techIcons.map((techIcon) => (
                     <img
@@ -45,11 +55,11 @@ function Projects() {
                     />
                   ))}
                 </div>
-              </div>
-            </a>
-          </li>
-        ))}
-      </ul>
+              </Card.Body>
+            </Card>
+          ))}
+        </CardGroup>
+      </Container>
     </section>
   );
 }

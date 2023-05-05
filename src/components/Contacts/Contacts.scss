@@ -1,3 +1,5 @@
+@import '../../scss/_shared.scss';
+
 .social {
   left: 1.5%;
   bottom: 0%;
@@ -21,7 +23,7 @@
   width: 1px;
   height: 100px;
   margin: 0px auto;
-  background-color: #fcf5e9;
+  background-color: $color--global-text;
 }
 
 .social__item {

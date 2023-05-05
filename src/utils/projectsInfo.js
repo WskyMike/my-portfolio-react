@@ -14,6 +14,7 @@ export const PROJECTS_INFO = [
   {
     id: '1',
     title: 'Movies Explorer',
+    class: 'fade-in-1',
     description:
       'SPA-приложение. Регистрируйтесь, ищите фильмы и сохраняйте их в избранное.',
     websiteUrl: 'https://diploma.front.nomorepartiesxyz.ru/',
@@ -29,6 +30,7 @@ export const PROJECTS_INFO = [
   {
     id: '2',
     title: 'Mesto',
+    class: 'fade-in-2',
     description:
       'SPA-приложение. Регистрируйтесь, делитесь фото в общей ленте вместе с другими пользователями. Ставьте лайки.',
     websiteUrl: 'https://wskymike.github.io/mesto/',
@@ -43,6 +45,7 @@ export const PROJECTS_INFO = [
   {
     id: '3',
     title: 'Russian Travel',
+    class: 'fade-in-3',
     description:
       'Адаптивный сайт. О путешествии на электричках по нашей необъятной.',
     websiteUrl: 'https://wskymike.github.io/russian-travel/',
@@ -57,6 +60,7 @@ export const PROJECTS_INFO = [
   {
     id: '4',
     title: 'How to Learn',
+    class: 'fade-in-4',
     description: 'Статичный сайт. Подсказки по эффективному обучению.',
     websiteUrl: 'https://wskymike.github.io/how-to-learn/',
     githubUrl: 'https://github.com/WskyMike/how-to-learn',
