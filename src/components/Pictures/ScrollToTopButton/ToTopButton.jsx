@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import './ToTopButton.scss';
+import "./ToTopButton.scss";
 
 function ScrollToTopButton() {
   const [showButton, setShowButton] = useState(false);
@@ -10,22 +10,22 @@ function ScrollToTopButton() {
       setShowButton(window.pageYOffset > 300);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleClick = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
   return (
     <button
       className={`scroll-to-top__button ${
-        !showButton ? 'scroll-to-top__button_hidden' : ''
+        !showButton ? "scroll-to-top__button_hidden" : ""
       }`}
       onClick={handleClick}
     >

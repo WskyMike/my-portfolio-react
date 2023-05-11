@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 // import { useLocation } from 'react-router-dom';
-import AppContexts from '../../Сontexts/AppContexts';
+import AppContexts from "../../Сontexts/AppContexts";
 
-import './Footer.scss';
+import "./Footer.scss";
 
 function Footer() {
   const { loading } = useContext(AppContexts);

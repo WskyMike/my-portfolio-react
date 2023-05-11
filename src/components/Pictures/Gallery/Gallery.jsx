@@ -1,13 +1,16 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import React, { useState, useEffect } from 'react';
-import AppContexts from '../../../Сontexts/AppContexts';
-
-import './Gallery.scss';
-import UnsplashApi from '../../../utils/UnsplashApi';
-import Loader from '../../Loader/Loader';
-import ScrollToTopButton from '../ScrollToTopButton/ToTopButton';
-import ImagePopup from '../ImagePopup/ImagePopup';
+import React, { useState, useEffect } from "react";
+import AppContexts from "../../../Сontexts/AppContexts";
+import {
+  Toastify,
+  renderToastify,
+} from "../../../vendor/Toastify/ToastifyConfig";
+import "./Gallery.scss";
+import UnsplashApi from "../../../utils/UnsplashApi";
+import Loader from "../../Loader/Loader";
+import ScrollToTopButton from "../ScrollToTopButton/ToTopButton";
+import ImagePopup from "../ImagePopup/ImagePopup";
 
 function Gallery({ query }) {
   // Состояние для хранения загруженных фотографий
@@ -35,6 +38,9 @@ function Gallery({ query }) {
     try {
       setLoading(true); // Устанавливаем состояние загрузки
       const data = await UnsplashApi(query, page); // Получаем данные с API
+      if (!data.results) {
+        throw new Error('Ответ API не содержит блока "results"');
+      }
       // Обновляем состояние фотографий
       setPhotos((prevPhotos) => {
         const newPhotos = data.results.filter(
@@ -45,7 +51,12 @@ function Gallery({ query }) {
       setTotalPages(data.total_pages); // Обновляем общее количество страниц
       setCurrentPage(page); // Обновляем текущую страницу
     } catch (error) {
-      console.error(error);
+      renderToastify(
+        "error",
+        `Ошибка запроса. Пожалуйста попробуйте позднее.`,
+        "bottom-center"
+      );
+      throw error; // Перебрасываем ошибку, чтобы она могла быть обработана в коде, который вызывает fetchPhotos()
     } finally {
       setLoading(false); // Снимаем состояние загрузки
     }
@@ -53,6 +64,10 @@ function Gallery({ query }) {
 
   // Загрузка первой страницы при монтировании компонента
   useEffect(() => {
+    if (query.trim() === "") {
+      // не делать запрос, если он пустой или состоит только из пробелов
+      return;
+    }
     setPhotos([]); // Очищаем массив фотографий
     fetchPhotos(query, 1); // Загружаем первую страницу
   }, [query]);
@@ -77,14 +92,15 @@ function Gallery({ query }) {
 
   // Добавляем обработчик скролла при монтировании компонента
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [currentPage, loading, query, totalPages]);
 
   return (
     <AppContexts.Provider value={loading}>
+      <Toastify />
       <ScrollToTopButton />
       <ImagePopup photo={selectedPhoto} onClose={closeAllPopups} />
       <section className="gallery">
@@ -96,7 +112,7 @@ function Gallery({ query }) {
           >
             <img
               className="gallery__img"
-              src={photo.urls.raw + '&w=800'}
+              src={photo.urls.raw + "&w=800"}
               alt={photo.alt_description}
             />
             {/* <div className="gallery__number">{index + 1}</div> */}

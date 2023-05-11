@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import './weather.scss';
-import { getWeather } from '../../utils/AsyncWeatherApi_AccuWeather';
+import { React, useState } from "react";
+import "./weather.scss";
+import { getWeather } from "../../utils/AsyncWeatherApi_AccuWeather";
 
 // import locationIcon from '../../images/icons8-location-64.png';
-import humidityImg from '../../images/weather_icons/hygrometer.svg';
-import windImg from '../../images/weather_icons/wind.svg';
-import Loader from '../Loader/Loader';
-import NotFoundImg from '../../images/page-not-found-5.png';
-import SearchButtonImg from '../../images/skobka.svg';
+import humidityImg from "../../images/weather_icons/hygrometer.svg";
+import windImg from "../../images/weather_icons/wind.svg";
+import Loader from "../Loader/Loader";
+import NotFoundImg from "../../images/page-not-found-5.png";
+import { Toastify, renderToastify } from "../../vendor/Toastify/ToastifyConfig";
 
 const Weather = () => {
   // Стейт для хранения названия города
-  const [city, setCity] = useState('');
+  const [city, setCity] = useState("");
   // Стейт для хранения текущей погоды в указанном городе
   const [weather, setWeather] = useState(null);
   // Стейт загрузки
@@ -22,6 +22,10 @@ const Weather = () => {
   // Функция для получения данных о погоде и обновления стейта weather
   const handleSearch = async (e) => {
     e.preventDefault();
+    if (city.trim() === "") {
+      renderToastify("info", "Введите запрос", "bottom-right", "light");
+      return;
+    }
     setLoading(true);
 
     setTimeout(async () => {
@@ -36,7 +40,8 @@ const Weather = () => {
         setError(false); // Если была до этого ошибка - убираем
         setWeather(data);
       } catch (error) {
-        console.error('Ошибка в получении данных в компоненте Weather', error);
+        // console.error("Ошибка в получении данных в компоненте Weather", error);
+        renderToastify("error", `Ошибка в получении данных.`, "bottom-right");
         setError(true); // Выводим not found
         setWeather(null);
       }
@@ -51,11 +56,16 @@ const Weather = () => {
 
   return (
     <section className="weather">
+      <Toastify />
       <h1 className="weather__header">
         <span className="highlighted-text">Погода</span> в твоем городе
       </h1>
       <div className="weather__container">
-        <form className="weather__search-box mb-3" onSubmit={handleSearch}>
+        <form
+          className="weather__search-box mb-3"
+          onSubmit={handleSearch}
+          noValidate
+        >
           <input
             className="weather__search-input form-control"
             type="text"
@@ -111,7 +121,7 @@ const Weather = () => {
             </div>
             <div className="row weather__result-secondary">
               <div className="col weather__result-secondary-container">
-                {' '}
+                {" "}
                 <img
                   src={humidityImg}
                   alt="humidity img"
@@ -122,7 +132,7 @@ const Weather = () => {
                 </p>
               </div>
               <div className="col weather__result-secondary-container">
-                {' '}
+                {" "}
                 <img
                   src={windImg}
                   alt="winddddd img"

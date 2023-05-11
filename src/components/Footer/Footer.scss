@@ -1,16 +1,20 @@
-@import '../../scss/_shared.scss';
+@import "../../scss/_shared.scss";
 
 .footer {
   margin-top: 10vh;
   color: $color--global-gray;
-  font-family: 'JetBrains Mono';
+  font-family: "JetBrains Mono";
   font-weight: 200;
   font-size: 1rem;
   text-align: left;
-}
 
-@media screen and (max-width: 850px) {
-  .footer {
+  @media screen and (max-width: 850px) {
     font-size: 0.7rem;
+  }
+
+  @media screen and (max-width: 576px) {
+    text-align: center;
+    margin-bottom: 4vh;
+    margin-top: 6vh;
   }
 }

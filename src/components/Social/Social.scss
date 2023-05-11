@@ -43,8 +43,13 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .social__icon {
-    width: 20px;
+
+
+}
+
+@media screen and (max-width: 992px) {
+  .social__wrapper {
+    gap:3vh;
   }
 
   .social__wrapper::after {

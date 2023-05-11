@@ -6,16 +6,19 @@
   margin: 8vh 0vw 0vh 2vw;
   flex-grow: 1;
 
-  @media (max-height: 520px) {
-    margin: 15vh 0vw 0vh 2vw;
-  }
-
   @media (max-width: 768px) {
     margin: 8vh 0vw 0vh 3vw;
   }
 
+  @media (max-width: 576px) {
+    margin: 8vh 0vw 0vh 0vw;
+  }
+
+  @media (max-height: 576px) {
+    margin: 15vh 0vw 0vh 0vw;
+  }
+
   @media (max-width: 425px) {
-    margin: 8vh 0vw 0vh 5vw;
   }
 
   &__result {

@@ -1,7 +1,7 @@
-import React from 'react';
-import './Loader.scss';
+import React from "react";
+import "./Loader.scss";
 
-function Loader({ className = '' }) {
+function Loader({ className = "" }) {
   return <div className={`loader ${className}`} />;
 }
 

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Card, CardGroup, Container } from 'react-bootstrap';
+import React from "react";
+import { Card, CardGroup, Container } from "react-bootstrap";
 
-import './Projects.scss';
+import "./Projects.scss";
 
-import { PROJECTS_INFO } from '../../utils/projectsInfo';
+import { PROJECTS_INFO } from "../../utils/projectsInfo";
 
 function Projects() {
   return (
@@ -36,7 +36,7 @@ function Projects() {
                 </a>
                 <Card.Title
                   className="projects__card-title"
-                  onClick={() => window.open(project.websiteUrl, '_blank')}
+                  onClick={() => window.open(project.websiteUrl, "_blank")}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
