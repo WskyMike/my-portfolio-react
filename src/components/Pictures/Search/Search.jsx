@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-
+import {
+  Toastify,
+  renderToastify,
+} from "../../../vendor/Toastify/ToastifyConfig";
 import "./Search.scss";
 import SearchButton from "../../../images/icons8-search-128.png";
 
@@ -14,11 +17,16 @@ function Search({ onSearch }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (query.trim() === "") {
+      renderToastify("info", "Введите запрос", null, "light");
+      return;
+    }
     onSearch(query);
   };
 
   return (
     <section className="search">
+      <Toastify />
       <div className="search__container">
         <Form onSubmit={handleSubmit} noValidate>
           <Form.Group className="search__wrapper-tb">

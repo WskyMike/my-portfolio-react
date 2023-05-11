@@ -1,4 +1,4 @@
-@import '../../scss/_shared.scss';
+@import "../../scss/_shared.scss";
 
 .fade-in {
   @include fade-in__add-duration(0.5s);
@@ -7,6 +7,11 @@
 .main {
   color: $color--global-text;
   margin: 12vh auto;
+
+  @media (max-width: 576px) {
+    margin-bottom: 0;
+    padding: 0;
+  }
 }
 
 .myphoto {
@@ -44,14 +49,18 @@
 
   &__upper-text {
     font-size: 9vmin;
-    font-family: 'JetBrains Mono';
+    font-family: "JetBrains Mono";
     font-weight: 600;
   }
   &__lower-text {
-    font-family: 'JetBrains Mono';
+    font-family: "JetBrains Mono";
     line-height: 1.3;
     font-weight: 200;
     font-size: calc(14px + 2vmin);
+
+    @media (max-width: 435px) {
+      font-size: calc(15px + 1vmin);
+    }
   }
 }
 
@@ -69,16 +78,20 @@
   padding-top: 8vh;
 
   @media (max-width: 576px) {
-    padding-left: 4vw;
-    padding-right: 0;
+    padding-left: 2vw;
+    padding-right: 2vw;
   }
 
   &__wrapper {
     display: flex;
     flex-direction: column;
     background-color: rgb(3 3 9 / 30%);
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 2vh 1vw 2vh 1vw;
+
+    @media (max-width: 1024px) {
+      padding: 2vh 3vw 2vh 3vw;
+    }
   }
 
   &__heading {

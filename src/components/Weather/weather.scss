@@ -1,11 +1,15 @@
-@import '../../scss/_shared.scss';
+@import "../../scss/_shared.scss";
 
 .weather {
   @include form-base_add-width(85%);
 
+  @media (max-width: 768px) {
+    padding: 2vh 2vw 2vh 2vw;
+  }
+
   @media (max-width: 576px) {
     width: 100%;
-    margin-left: 2vh;
+    margin: 0 auto;
   }
 
   &__header {
@@ -18,18 +22,13 @@
     gap: 3vw;
   }
 
-  // &__search-location-icon {
-  //   width: 3vw;
-  //   height: auto;
-  // }
-
   &__search-input {
     @include form-input;
     width: 75%;
     &::placeholder {
       color: $color--global-gray;
       font-size: 1.8vh;
-      font-family: 'Montserrat';
+      font-family: "Montserrat";
     }
     @media (max-width: 768px) {
       width: 85%;
@@ -60,7 +59,7 @@
   &__result-box {
     display: flex;
     flex-direction: column;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     gap: 3vh;
     margin-top: 4vh;
 
@@ -140,9 +139,9 @@
       display: flex;
       align-items: center;
 
-        @media (max-width: 1016px) {
-          gap: 3vw;
-        }
+      @media (max-width: 1016px) {
+        gap: 3vw;
+      }
     }
 
     &-humiwind-icon {
@@ -156,7 +155,7 @@
   }
 
   &__not-found {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     display: flex;
     flex-direction: column;
     align-items: center;

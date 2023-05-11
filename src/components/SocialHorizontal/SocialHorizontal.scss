@@ -1,0 +1,23 @@
+@import '../../scss/_shared.scss';
+
+
+.social-lateral__wrapper {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 8vh;
+}
+
+.social-lateral__item {
+}
+
+.social-lateral__icon {
+  width: 9vw;
+}
+
+
+

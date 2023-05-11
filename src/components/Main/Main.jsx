@@ -1,4 +1,4 @@
-import React from "react";
+import { React } from "react";
 import "../../scss/bootstrap_mash.scss";
 import "./Main.scss";
 

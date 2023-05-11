@@ -51,7 +51,6 @@ function Header() {
             id="basic-navbar-nav"
             className="me-5 justify-content-end"
           >
-            <span className="header__decor-brace"> {"["} </span>
             <Nav className="ml-auto gap-4">
               <Nav.Link
                 as={NavLink}
@@ -86,7 +85,6 @@ function Header() {
                 <span className="highlighted-text-nav"> 03.</span>Резюме
               </a>
             </Nav>
-            <span className="header__decor-brace"> {"]"} </span>
           </Navbar.Collapse>
         </Container>
       </Navbar>

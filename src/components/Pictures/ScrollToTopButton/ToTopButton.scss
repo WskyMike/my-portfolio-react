@@ -1,11 +1,10 @@
 .scroll-to-top__button {
   position: fixed;
   bottom: 5vh;
-  right: 7vh;
+  right: 12vh;
   width: 9vh;
   height: 9vh;
   border-radius: 50%;
-  /* background-color: rgb(255 255 255 / 30%); */
   background-color: rgb(30 48 75 / 60%);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
@@ -28,4 +27,10 @@
 
 .scroll-to-top__button_hidden {
   display: none;
+}
+
+@media (max-width: 990px) {
+  .scroll-to-top__button {
+    right: 7vh;
+  }
 }

@@ -33,8 +33,8 @@ export const PROJECTS_INFO = [
     class: "fade-in-2",
     description:
       "SPA-приложение. Регистрируйтесь, делитесь фото в общей ленте вместе с другими пользователями. Ставьте лайки.",
-    websiteUrl: "https://wskymike.github.io/mesto/",
-    githubUrl: "https://github.com/WskyMike/mesto",
+    websiteUrl: "https://mesto.front.nomorepartiesxyz.ru/",
+    githubUrl: "https://github.com/WskyMike/react-mesto-api-full",
     githubIconUrl: GithubIcon,
     imageUrl: MestoImg,
     techIcons: [

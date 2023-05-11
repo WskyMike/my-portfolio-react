@@ -1,17 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React from "react";
-import "./Contacts.scss";
+import "./SocialHorizontal.scss";
+
 import telegram from "../../images/telegram.svg";
 import vk from "../../images/vk.svg";
 import insta from "../../images/insta.svg";
 import github from "../../images/github.svg";
 import codewars from "../../images/codewars.svg";
 
-function Contacts() {
+function SocialHorizontal() {
   return (
-    <div orientation="left" className="social">
-      <ul className="social__wrapper">
-        <li className="social__item">
+    <div className="social-lateral d-sm-none">
+      <ul className="social-lateral__wrapper">
+        <li className="social-lateral__item">
           <a
             href="https://t.me/wskymike"
             target="_blank"
@@ -19,13 +20,13 @@ function Contacts() {
             aria-label="telegram"
           >
             <img
-              className="social__icon telegram"
+              className="social-lateral__icon telegram"
               src={telegram}
               alt="telegram-logo"
             ></img>
           </a>
         </li>
-        <li className="social__item">
+        <li className="social-lateral__item">
           <a
             href="https://vk.com/id8105513"
             target="_blank"
@@ -33,13 +34,13 @@ function Contacts() {
             aria-label="vkontakte"
           >
             <img
-              className="social__icon vkontakte"
+              className="social-lateral__icon vkontakte"
               src={vk}
               alt="vk-logo"
             ></img>
           </a>
         </li>
-        <li className="social__item">
+        <li className="social-lateral__item">
           <a
             href="https://www.instagram.com/mikhail.ivanovich/"
             target="_blank"
@@ -47,13 +48,13 @@ function Contacts() {
             aria-label="instagram"
           >
             <img
-              className="social__icon instagram"
+              className="social-lateral__icon instagram"
               src={insta}
               alt="instagram-logo"
             ></img>
           </a>
         </li>
-        <li className="social__item">
+        <li className="social-lateral__item">
           <a
             href="https://github.com/WskyMike"
             target="_blank"
@@ -61,13 +62,13 @@ function Contacts() {
             aria-label="github"
           >
             <img
-              className="social__icon github"
+              className="social-lateral__icon github"
               src={github}
               alt="github-logo"
             ></img>
           </a>
         </li>
-        <li className="social__item">
+        <li className="social-lateral__item">
           <a
             href="https://www.codewars.com/users/WskyMike"
             target="_blank"
@@ -75,7 +76,7 @@ function Contacts() {
             aria-label="codewars"
           >
             <img
-              className="social__icon codewars"
+              className="social-lateral__icon codewars"
               src={codewars}
               alt="codewars-logo"
             ></img>
@@ -86,4 +87,4 @@ function Contacts() {
   );
 }
 
-export default Contacts;
+export default SocialHorizontal;

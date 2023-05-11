@@ -47,10 +47,13 @@
       margin-top: 15vh;
     }
 
+    @media (max-width: 576px) {
+      padding: 0;
+    }
+
     @media (max-width: 425px) {
       gap: 3vh;
       margin-top: 25vh;
-      padding: 0px 0vh 0px 2vh;
     }
   }
 
