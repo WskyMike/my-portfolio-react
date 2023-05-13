@@ -71,6 +71,10 @@
   flex-wrap: wrap;
   align-content: center;
   gap: 5vh;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 }
 
 .aboutme {
@@ -99,20 +103,6 @@
   }
 
   &__text {
-    @include textarea__add-font-weight(500);
-  }
-
-  &__skills {
-    margin: 0 auto;
-
-    &-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 2vw;
-      padding-top: 2vh;
-    }
-    &-img {
-      width: 3vw;
-    }
+    @include textarea__add-font-weight(200);
   }
 }

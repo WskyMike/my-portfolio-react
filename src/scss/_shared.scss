@@ -126,7 +126,7 @@ $color--global-error: rgba(255, 0, 0, 0.8);
 @mixin textarea__add-font-weight($weight) {
   font-family: 'Montserrat';
   font-weight: $weight;
-  text-indent: 2vw;
+  text-indent: 1vw;
   line-height: 1.6;
 }
 
@@ -135,4 +135,9 @@ $color--global-error: rgba(255, 0, 0, 0.8);
   @media (max-width: $width) {
     @content;
   }
+}
+
+.custom-tooltip .tooltip-inner {
+  color: $color--global-text;
+  font-size: large;
 }
