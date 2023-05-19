@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/my-portfolio-react/static/css/main.f3464697.css",
-    "main.js": "/my-portfolio-react/static/js/main.d7c68374.js",
+    "main.js": "/my-portfolio-react/static/js/main.00129299.js",
     "static/js/787.fe039db8.chunk.js": "/my-portfolio-react/static/js/787.fe039db8.chunk.js",
     "static/media/mesto.jpg": "/my-portfolio-react/static/media/mesto.037f82aac705dcba3d69.jpg",
     "static/media/how_to_learn.jpg": "/my-portfolio-react/static/media/how_to_learn.8bc59a7a788f116cdbda.jpg",
     "static/media/movies_explorer.jpg": "/my-portfolio-react/static/media/movies_explorer.9379c57bfe9bcbfafd5b.jpg",
     "static/media/russian_travel.jpg": "/my-portfolio-react/static/media/russian_travel.ba1b3d1210e84f728c9b.jpg",
     "static/media/Sosnin_MI_resume.pdf": "/my-portfolio-react/static/media/Sosnin_MI_resume.ae09b10e3dbdab653372.pdf",
+    "static/media/demo_chat.png": "/my-portfolio-react/static/media/demo_chat.8f2c837fe1e62bb44d00.png",
     "static/media/ava_2.png": "/my-portfolio-react/static/media/ava_2.e5152a2b1119e321aaa3.png",
     "static/media/angelo-abear-V4q470-YMk0-unsplash.jpg": "/my-portfolio-react/static/media/angelo-abear-V4q470-YMk0-unsplash.6b55ea49cc6ef1c505c9.jpg",
     "static/media/page-not-found-5.png": "/my-portfolio-react/static/media/page-not-found-5.29c6af0d8fa029f4509c.png",
@@ -63,11 +64,11 @@
     "static/media/insta.svg": "/my-portfolio-react/static/media/insta.a24f646606b664033d871cc61c820e15.svg",
     "static/media/skobka.svg": "/my-portfolio-react/static/media/skobka.4c145c4c06ab2da496eaef2196b2ced8.svg",
     "main.f3464697.css.map": "/my-portfolio-react/static/css/main.f3464697.css.map",
-    "main.d7c68374.js.map": "/my-portfolio-react/static/js/main.d7c68374.js.map",
+    "main.00129299.js.map": "/my-portfolio-react/static/js/main.00129299.js.map",
     "787.fe039db8.chunk.js.map": "/my-portfolio-react/static/js/787.fe039db8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f3464697.css",
-    "static/js/main.d7c68374.js"
+    "static/js/main.00129299.js"
   ]
 }
