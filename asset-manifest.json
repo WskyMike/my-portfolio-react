@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/my-portfolio-react/static/css/main.df04e99c.css",
-    "main.js": "/my-portfolio-react/static/js/main.08eca313.js",
+    "main.css": "/my-portfolio-react/static/css/main.16e70b0b.css",
+    "main.js": "/my-portfolio-react/static/js/main.1ad956f6.js",
     "static/js/787.fe039db8.chunk.js": "/my-portfolio-react/static/js/787.fe039db8.chunk.js",
     "static/media/Sosnin_MI_resume.pdf": "/my-portfolio-react/static/media/Sosnin_MI_resume.ae09b10e3dbdab653372.pdf",
     "static/media/mesto.jpg": "/my-portfolio-react/static/media/mesto.09908010bcf9d4798a49.jpg",
@@ -61,12 +61,12 @@
     "static/media/github.svg": "/my-portfolio-react/static/media/github.154acd55d54c0bd71e5f4a3d64108e9d.svg",
     "static/media/vk.svg": "/my-portfolio-react/static/media/vk.82e8ef76b05ac2a1c5870f9ff96b62b8.svg",
     "static/media/insta.svg": "/my-portfolio-react/static/media/insta.a24f646606b664033d871cc61c820e15.svg",
-    "main.df04e99c.css.map": "/my-portfolio-react/static/css/main.df04e99c.css.map",
-    "main.08eca313.js.map": "/my-portfolio-react/static/js/main.08eca313.js.map",
+    "main.16e70b0b.css.map": "/my-portfolio-react/static/css/main.16e70b0b.css.map",
+    "main.1ad956f6.js.map": "/my-portfolio-react/static/js/main.1ad956f6.js.map",
     "787.fe039db8.chunk.js.map": "/my-portfolio-react/static/js/787.fe039db8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.df04e99c.css",
-    "static/js/main.08eca313.js"
+    "static/css/main.16e70b0b.css",
+    "static/js/main.1ad956f6.js"
   ]
 }
