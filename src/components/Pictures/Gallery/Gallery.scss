@@ -12,6 +12,10 @@
     margin: 0px 1% 1% 0;
     position: relative;
 
+    @media (max-width: 525px) {
+      margin: 0px 0 3% 0;
+    }
+
     @media (max-width: 425px) {
       margin: 0px 0% 3% 0;
     }

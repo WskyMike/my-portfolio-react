@@ -5,7 +5,6 @@ import {
   renderToastify,
 } from "../../../vendor/Toastify/ToastifyConfig";
 import "./Search.scss";
-import SearchButton from "../../../images/icons8-search-128.png";
 
 function Search({ onSearch }) {
   const [query, setQuery] = useState("");
@@ -43,11 +42,7 @@ function Search({ onSearch }) {
               aria-label="search-button"
               className="search__button"
             >
-              <img
-                src={SearchButton}
-                alt="search icon"
-                className="search__button-img"
-              />
+              Найти
             </Button>
           </Form.Group>
         </Form>

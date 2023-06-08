@@ -1,4 +1,4 @@
-$color--global-background-: #000030;
+$color--global-background-: #161616;
 $color--global-text: #fcf5e9;
 $color--scrollbar-dark: #000030;
 $color--scrollbar-light: #2d496b;
@@ -6,8 +6,49 @@ $color--global-green: #98ce00;
 $color--global-gray: #989898;
 $color--global-button: #2d496b;
 $color--global-error: rgba(255, 0, 0, 0.8);
+$color--global-js-yellow: #ffdf00;
 
-// Button
+@mixin highlighted-text($color) {
+  color: $color;
+}
+
+// Error mixins
+@mixin error-message_add-paddings-left-top($padding-top, $padding-left) {
+  animation: fadeIn 0.5s ease-in-out;
+  color: $color--global-error;
+  font-size: 1.8vh;
+  position: absolute;
+  padding-top: $padding-top;
+  padding-left: $padding-left;
+  max-width: 100%;
+}
+
+// Button mixins
+@mixin button-submit-small() {
+  font-family: "JetBrains Mono";
+  font-weight: 500;
+  font-size: 2vh;
+  background-color: $color--global-gray;
+  border: none !important;
+  min-height: 5vh;
+  margin-top: 2vh;
+  transition: background-color 0.3s ease;
+
+  &:active {
+    background-color: $color--global-green !important;
+    transform: scaleX(0.99);
+  }
+  &:focus {
+    border: none !important;
+    background-color: $color--global-green !important;
+    box-shadow: none;
+  }
+  &:hover {
+    border: none !important;
+    background-color: $color--global-green !important;
+  }
+}
+
 @mixin search-button-small($width) {
   background-color: transparent !important;
   border: 2px solid $color--global-text;
@@ -31,50 +72,12 @@ $color--global-error: rgba(255, 0, 0, 0.8);
   }
 }
 
-@mixin highlighted-text($color) {
-  color: $color
-}
-
-// Error mixins
-@mixin error-message_add-paddings-left-top($padding-top, $padding-left) {
-  animation: fadeIn 0.5s ease-in-out;
-  color: $color--global-error;
-  font-size: 1.8vh;
-  position: absolute;
-  padding-top: $padding-top;
-  padding-left: $padding-left;
-  max-width: 100%;
-}
-
-// Button mixins
-@mixin button-submit-small() {
-  font-family: 'Montserrat';
-  font-weight: 500;
-  font-size: 2vh;
-  background-color: $color--global-button;
-  border: none;
-  min-height: 5vh;
-  margin-top: 2vh;
-
-  &:active {
-    background-color: $color--global-green !important;
-  }
-
-  &:focus {
-    background-color: $color--global-gray;
-    box-shadow: none;
-  }
-  &:hover {
-    background-color: $color--global-gray;
-  }
-}
-
 // Form mixins
 @mixin form-input-group() {
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  font-family: 'Montserrat';
+  font-family: "JetBrains Mono";
 }
 
 @mixin form-base_add-width($width) {
@@ -83,13 +86,11 @@ $color--global-error: rgba(255, 0, 0, 0.8);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  background-color: rgb(3 3 9 / 60%);
 }
 
 @mixin form-input() {
   font-size: 2vh;
-  background: rgb(0 0 0 / 60%);
-  font-family: 'Montserrat';
+  font-family: "JetBrains Mono";
 }
 
 @mixin form-label() {
@@ -98,7 +99,7 @@ $color--global-error: rgba(255, 0, 0, 0.8);
 }
 
 @mixin formtitle($font-size) {
-  font-family: 'JetBrains Mono';
+  font-family: "JetBrains Mono";
   color: $color--global-gray;
   font-weight: 200;
   padding-bottom: 2vh;
@@ -106,6 +107,14 @@ $color--global-error: rgba(255, 0, 0, 0.8);
 }
 
 // Animations
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-in-out forwards;
+}
+
 @mixin fade-in__add-duration($duration) {
   animation-name: fadeIn;
   animation-duration: $duration;
@@ -120,11 +129,20 @@ $color--global-error: rgba(255, 0, 0, 0.8);
       opacity: 1;
     }
   }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
 }
 
 // Text
 @mixin textarea__add-font-weight($weight) {
-  font-family: 'Montserrat';
+  font-family: "JetBrains Mono";
   font-weight: $weight;
   text-indent: 1vw;
   line-height: 1.6;

@@ -83,7 +83,6 @@ function ContactForm() {
       emailjs
         .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
         .then((res) => {
-          // console.log('SUCCESS!', response.status, response.text);
           res.status === 200 && setName("");
           setEmail("");
           setMessage("");
@@ -102,72 +101,77 @@ function ContactForm() {
       className="contact-form"
       noValidate
     >
-      <h2 className="contact-form__title">
-        <span className="highlighted-text">Пригласить</span> на собес
-      </h2>
-      <div className="contact-form__group mb-4">
-        <label htmlFor="name" className="contact-form__label">
-          Имя:
-        </label>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="contact-form__input form-control"
-          required
-          placeholder={nameError}
-          autoComplete="off"
-        />
+      <h3 className="contact-form__title">
+        function{" "}
+        <span className="highlighted-text-shadow">inviteAnInterview</span>() =
+      </h3>
+      <div className="contact-form__group-wrapper">
+        <div className="contact-form__group mb-4">
+          <label htmlFor="name" className="contact-form__label">
+            Имя:
+          </label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="contact-form__input form-control"
+            required
+            placeholder={nameError}
+            autoComplete="off"
+          />
+        </div>
+        <div className="contact-form__group mb-4">
+          <label htmlFor="email" className="contact-form__label">
+            E-mail:
+          </label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="contact-form__input form-control"
+            required
+            placeholder={emailError}
+          />
+          {showEmailError && (
+            <div className="contact-form__error-message">
+              {emailRegExpError}
+            </div>
+          )}{" "}
+        </div>
+        <div className="contact-form__group mb-4">
+          <label htmlFor="message" className="contact-form__label">
+            Сообщение:
+          </label>
+          <textarea
+            id="message-area"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className="contact-form__input form-control"
+            required
+            placeholder={messageError}
+            rows="3"
+          ></textarea>
+        </div>
+        {isSubmitted ? (
+          <button
+            type="submit"
+            className="contact-form__submit-btn btn btn-primary"
+            disabled
+            style={{ backgroundColor: "#98CE00", color: "#000", opacity: "1" }}
+          >
+            Спасибо! 🖤
+          </button>
+        ) : (
+          <button
+            type="submit"
+            className="contact-form__submit-btn btn btn-primary"
+          >
+            Отправить
+          </button>
+        )}
       </div>
-      <div className="contact-form__group mb-4">
-        <label htmlFor="email" className="contact-form__label">
-          E-mail:
-        </label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="contact-form__input form-control"
-          required
-          placeholder={emailError}
-        />
-        {showEmailError && (
-          <div className="contact-form__error-message">{emailRegExpError}</div>
-        )}{" "}
-      </div>
-      <div className="contact-form__group mb-4">
-        <label htmlFor="message" className="contact-form__label">
-          Сообщение:
-        </label>
-        <textarea
-          id="message-area"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          className="contact-form__input form-control"
-          required
-          placeholder={messageError}
-          rows="3"
-        ></textarea>
-      </div>
-      {isSubmitted ? (
-        <button
-          type="submit"
-          className="contact-form__submit-btn btn btn-primary"
-          disabled
-          style={{ backgroundColor: "#98CE00", color: "#000", opacity: "1" }}
-        >
-          Спасибо! 🖤
-        </button>
-      ) : (
-        <button
-          type="submit"
-          className="contact-form__submit-btn btn btn-primary"
-        >
-          Отправить 👌
-        </button>
-      )}
     </form>
   );
 }
