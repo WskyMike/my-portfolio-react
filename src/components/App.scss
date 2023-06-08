@@ -1,4 +1,4 @@
-@import '../scss/shared';
+@import "../scss/shared";
 
 // Глобальные стили
 .App {
@@ -10,25 +10,30 @@
   width: 90%;
 }
 
-.highlighted-text {
+.highlighted-text-shadow {
   @include highlighted-text($color--global-green);
+  text-shadow: 0 0 5px rgba(152, 206, 0, 0.5), 0 0 10px rgba(152, 206, 0, 0.5),
+    0 0 15px rgba(152, 206, 0, 0.5);
 }
 
-.form-control, .form-control-sm {
+.form-control {
   border: none;
   border-bottom: 1px solid $color--global-text;
+  border-radius: 0px;
   color: $color--global-text;
-  &:focus {
-    background: rgb(0 0 0 / 60%);
-    // background: transparent;
+  background: transparent;
+
+  &:focus,
+  &:hover {
     box-shadow: none;
-    border-bottom: 1px solid #98ce00;
     color: $color--global-text;
+    background: transparent;
+    border-color: #ffdf00;
   }
+
   &:disabled {
-    background: rgb(0 0 0 / 40%);
+    background: transparent;
     box-shadow: none;
-    border-bottom: 1px solid #98ce00;
     opacity: 1;
   }
 }

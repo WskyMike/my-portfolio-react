@@ -3,69 +3,82 @@
 .weather {
   @include form-base_add-width(85%);
 
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+
   @media (max-width: 768px) {
-    padding: 2vh 2vw 2vh 2vw;
+    padding: 0;
   }
 
   @media (max-width: 576px) {
-    width: 100%;
     margin: 0 auto;
   }
 
   &__header {
-    @include formtitle(2vh);
+    @include formtitle(2.5vh);
   }
 
   &__search-box {
     display: flex;
-    justify-content: flex-start;
-    gap: 3vw;
+    flex-direction: column;
+    gap: 3vh;
   }
 
   &__search-input {
     @include form-input;
-    width: 75%;
+
     &::placeholder {
       color: $color--global-gray;
       font-size: 1.8vh;
-      font-family: "Montserrat";
+      font-family: "JetBrains Mono";
     }
+
     @media (max-width: 768px) {
-      width: 85%;
+      width: 100%;
     }
   }
 
   &__loader {
-    width: 3vh;
-    height: 3vh;
+    width: 4vh;
+    height: 4vh;
     border-radius: 50%;
-    border: 5px solid rgba(255, 255, 255, 0.6);
-    border-top: 5px solid #98ce00;
+    border: 5px solid $color--global-text;
+    border-top: 5px solid $color--global-green;
     animation: spin 2s linear infinite;
-    margin-top: 0.7vh;
-    margin-left: 0.5vh;
+    position: relative;
+    z-index: 999;
+    left: 50%;
   }
 
   &__search-button {
-    @include search-button-small(2.5vw);
-    background-image: url(../../images/icons8-search-128.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    border: none;
-    margin: 0;
+    @include button-submit-small;
+    font-weight: 200;
+    font-size: 2.5vh;
   }
 
   &__result-box {
     display: flex;
     flex-direction: column;
-    font-family: "Montserrat";
+    font-family: "JetBrains Mono";
     gap: 3vh;
     margin-top: 4vh;
+    padding: 3vh;
+
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
 
     @media (max-width: 1016px) {
       align-items: center;
       gap: 1vh;
+      padding: 2vh;
+    }
+
+    @media (max-width: 525px) {
+      gap: 4vw;
     }
   }
 
@@ -79,11 +92,10 @@
   }
   &__result-primary {
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    gap: 3vw;
 
     @media (max-width: 1016px) {
-      flex-direction: column;
       gap: 1vw;
     }
 
@@ -93,25 +105,24 @@
     }
 
     &-icon {
-      width: 8vw;
-      position: relative;
-      left: 15%;
+      max-width: 10vw;
 
       @media (max-width: 768px) {
-        width: 10vw;
-      }
-
-      @media (max-width: 576px) {
-        width: 12vw;
+        max-width: 15vw;
       }
     }
 
+    &-right {
+      display: flex;
+      flex-direction: column;
+    }
+
     &-temp {
-      font-size: 8vh;
+      font-size: 4vw;
       margin: 0 auto;
 
-      @media (max-width: 576px) {
-        font-size: 7vh;
+      @media (max-width: 768px) {
+        font-size: 9vw;
       }
     }
   }
@@ -119,43 +130,75 @@
   &__result-text {
     &-descr {
       margin-bottom: 0.5vh;
+
+      @media (max-width: 952px) {
+        font-size: 1.7vw !important;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 3vw !important;
+      }
+
+      @media (max-width: 525px) {
+        font-size: 3vw !important;
+      }
     }
 
     &-realfeel {
-      color: $color--global-gray;
+      @media (max-width: 952px) {
+        font-size: 1.6vw !important;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 2.3vw !important;
+      }
     }
   }
 
   &__result-secondary {
     display: flex;
-    gap: 4vw;
+    gap: 2vw;
+    justify-content: space-around;
 
     @media (max-width: 1016px) {
       gap: 1vw;
-      flex-direction: column;
+    }
+
+    @media (max-width: 425px) {
+      gap: 4vw;
     }
 
     &-container {
       display: flex;
       align-items: center;
+      gap: 0.3vw;
 
-      @media (max-width: 1016px) {
-        gap: 3vw;
+      @media (max-width: 768px) {
+        gap: 0.5vw;
       }
     }
 
     &-humiwind-icon {
-      width: 4vw;
+      width: 1.7vw;
+
+      @media (max-width: 768px) {
+        width: 4vw;
+      }
     }
 
     &-humiwind-text {
       margin: 0 auto;
-      font-size: 2.5vh;
+      font-size: 1vw;
+      display: contents;
+
+      @media (max-width: 768px) {
+        font-size: 2.5vw;
+      }
     }
   }
 
   &__not-found {
-    font-family: "Montserrat";
+    font-family: "JetBrains Mono";
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -29,9 +29,9 @@ function Main() {
             />
           </h1>
           <h2 className="greeting__lower-text">
-            И моя мечта стать <br />
+            Начинающий <br />
             <span className="highlighted-text">
-              {`< фронтенд-разработчиком / >`}
+              {`< frontend-разработчик / >`}
             </span>
           </h2>
         </section>
@@ -41,20 +41,22 @@ function Main() {
       </div>
       <div className="row">
         <section className="aboutme col-md-7">
-          <div className="aboutme__wrapper">
-            {/* Разделение текста на параграфы для форматирования */}
-            <h3 className="aboutme__heading">Познакомимся?</h3>
+          {/* Разделение текста на параграфы для форматирования */}
+          <h3 className="aboutme__heading">
+            const <span className="highlighted-text-shadow">aboutMeText</span> =
+          </h3>
+          <div className="aboutme__text-wrapper">
             {aboutMeText.split("\n").map((paragraph, index) => (
               <p key={index} className="aboutme__text">
                 {paragraph}
               </p>
             ))}
           </div>
+          <ContactForm />
         </section>
         <section className="informers col-md-5">
           <Skills />
           <Weather />
-          <ContactForm />
         </section>
       </div>
     </main>

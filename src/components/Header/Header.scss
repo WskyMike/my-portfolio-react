@@ -1,7 +1,14 @@
-@import '../../scss/_shared.scss';
+@import "../../scss/_shared.scss";
 
 .highlighted-text-nav {
   @include highlighted-text(#989898);
+}
+
+.highlighted-text-nav,
+.resume {
+  @media (min-width: 992px) {
+    color: $color--global-text !important;
+  }
 }
 
 .header {
@@ -11,11 +18,11 @@
   left: 0;
   right: 0;
   z-index: 999;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
 
   &__nav-item {
-    font-family: 'JetBrains Mono';
+    font-family: "JetBrains Mono";
     font-weight: 400;
     color: $color--global-text !important;
 
@@ -27,9 +34,25 @@
       color: #98ce00 !important;
     }
   }
+
+  &__nav-button {
+    @include button-submit-small;
+    border-radius: 5px;
+    margin: 0;
+    min-height: unset;
+
+    @media (max-width: 992px) {
+      background-color: transparent;
+    }
+
+    &:hover {
+      color: $color--global-text !important;
+    }
+  }
+
   &__decor-brace {
     color: #989898;
-    font-family: 'JetBrain Mono';
+    font-family: "JetBrain Mono";
     font-size: 4vh;
     position: relative;
     bottom: 0.5vh;
@@ -67,4 +90,3 @@
     }
   }
 }
-

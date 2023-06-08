@@ -5,13 +5,12 @@
   display: flex;
   justify-content: center;
 
-  @media (max-width: 420px) {
-    margin: 8vh 0vh 10vh 0vh;
+  @media (max-width: 525px) {
+    margin: 6vh 0vh 15vh 0vh;
   }
 
   &__container {
-    @include form-base_add-width(80%);
-    background-color: rgba(255, 255, 255, 0.209);
+    @include form-base_add-width(70%);
     padding: 1vh 0.5vw 1vh 0.5vw;
 
     @media (max-width: 990px) {
@@ -26,45 +25,23 @@
   &__wrapper-tb {
     display: flex;
     height: 5vh;
+    gap: 3vh;
+
+    @media (max-width: 525px) {
+      flex-direction: column;
+    }
   }
 
   &__input {
-    font-size: 3vh;
-    line-height: 1;
-    font-family: "Montserrat";
-    background-color: transparent;
-    border: none !important;
-    padding: 1vh !important;
-
-    &::placeholder {
-      color: $color--global-gray;
-      font-family: "Montserrat";
-      font-size: 3vh;
-    }
-
-    &:focus {
-      border: none !important;
-      background: transparent !important;
-    }
+    @include form-input;
   }
-  &__button {
-    background-color: transparent !important;
-    border: 1px solid $color--global-text;
-    flex-shrink: 0;
-    transition: transform 0.2s ease-in-out;
-    margin-left: 1vw;
-    display: flex;
 
-    &:hover {
-      border-color: $color--global-text !important;
-      transform: scale(1.1);
-    }
-    &:active {
-      opacity: 0.5;
-    }
-    &-img {
-      height: 100%;
-      width: 100%;
+  &__button {
+    @include button-submit-small;
+    margin: 0 auto;
+
+    @media (max-width: 525px) {
+      margin: 2vh 0 0 0;
     }
   }
 }

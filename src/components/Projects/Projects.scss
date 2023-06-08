@@ -1,4 +1,4 @@
-@import '../../scss/_shared.scss';
+@import "../../scss/_shared.scss";
 
 .fade-in-1 {
   @include fade-in__add-duration(0.3s);
@@ -23,6 +23,7 @@
 
 .projects {
   margin-top: 8vh;
+  flex: 1;
 
   @media (max-width: 768px) {
     margin-top: 0;
@@ -34,7 +35,7 @@
     grid-template-columns: repeat(2, minmax(auto, 1fr));
     gap: 4vw;
     margin-top: 10vh;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
 
     @media (max-width: 1024px) {
       padding: 0px 5vw 0px 5vw;
@@ -61,13 +62,18 @@
     border-radius: 5px;
     overflow: hidden;
     position: relative;
+    height: 23vw;
+
+    @media (max-width: 768px) {
+      height: 34vh;
+    }
 
     &:hover .projects__card-description {
       opacity: 1;
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;

@@ -12,9 +12,9 @@ function Skills() {
   );
   return (
     <section className="skills">
-      <h2 className="skills__title">
-        <span className="highlighted-text">Стек</span> технологий
-      </h2>
+      <h3 className="skills__title">
+        const <span className="highlighted-text-shadow">myStack</span> =
+      </h3>
       <div className="skills__wrapper container">
         {Object.keys(skills).map((skill) => (
           <OverlayTrigger

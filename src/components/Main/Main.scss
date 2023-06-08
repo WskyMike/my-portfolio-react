@@ -4,9 +4,17 @@
   @include fade-in__add-duration(0.5s);
 }
 
+.highlighted-text {
+  @include highlighted-text($color--global-green);
+}
+
 .main {
   color: $color--global-text;
   margin: 12vh auto;
+
+  @media (max-width: 768px) {
+    margin-bottom: 0;
+  }
 
   @media (max-width: 576px) {
     margin-bottom: 0;
@@ -19,15 +27,19 @@
   display: flex;
   justify-content: center;
 
+  @media (max-width: 435px) {
+    margin-top: 3vh;
+  }
+
   &__img {
     width: auto;
-    height: 45vh;
+    height: 39vh;
     -webkit-clip-path: polygon(0 0, 100% 4vh, 100% 100%, 0 calc(100% - 4vh));
     clip-path: polygon(0 0, 100% 4vh, 100% 100%, 0 calc(100% - 4vh));
     opacity: 1;
 
     @media (max-width: 992px) {
-      height: 40vh;
+      height: 34vh;
     }
 
     @media (max-width: 768px) {
@@ -35,7 +47,7 @@
     }
 
     @media (max-width: 576px) {
-      height: 37vh;
+      height: 31vh;
     }
   }
 }
@@ -47,39 +59,63 @@
   gap: 5vh;
   padding-left: 5vw;
 
+  @media (max-width: 435px) {
+    gap: 3vh;
+  }
+
   &__upper-text {
-    font-size: 9vmin;
+    font-size: 8vmin;
     font-family: "JetBrains Mono";
     font-weight: 600;
+
+    @media (max-width: 992px) {
+      font-size: 8vmin;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 10vmin;
+    }
   }
+
   &__lower-text {
     font-family: "JetBrains Mono";
     line-height: 1.3;
     font-weight: 200;
-    font-size: calc(14px + 2vmin);
+    font-size: calc(10px + 2vmin);
+
+    @media (max-width: 992px) {
+      font-size: calc(7px + 2vmin);
+    }
 
     @media (max-width: 435px) {
-      font-size: calc(15px + 1vmin);
+      font-size: calc(14px + 1vmin);
     }
   }
 }
 
 .informers {
-  padding-top: 8vh;
+  padding-top: 15vh;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
-  gap: 5vh;
+  gap: 12vh;
 
   @media (max-width: 768px) {
     align-items: center;
+    padding-top: 8vh;
+    gap: 8vh;
+    padding-left: 5vw;
   }
 }
 
 .aboutme {
   padding-left: 5vw;
-  padding-top: 8vh;
+  padding-top: 17vh;
+
+  @media (max-width: 768px) {
+    padding-top: 10vh;
+  }
 
   @media (max-width: 576px) {
     padding-left: 2vw;
@@ -89,9 +125,9 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    background-color: rgb(3 3 9 / 30%);
     border-radius: 5px;
     padding: 2vh 1vw 2vh 1vw;
+    position: relative;
 
     @media (max-width: 1024px) {
       padding: 2vh 3vw 2vh 3vw;
@@ -99,7 +135,7 @@
   }
 
   &__heading {
-    @include formtitle(3.5vh);
+    @include formtitle(2.5vh);
   }
 
   &__text {

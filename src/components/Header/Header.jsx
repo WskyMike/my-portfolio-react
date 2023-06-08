@@ -3,7 +3,6 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 import "./Header.scss";
-import skobka from "../../images/skobka.svg";
 import resume from "../../images/Sosnin_MI_resume.pdf";
 
 function Header() {
@@ -38,14 +37,6 @@ function Header() {
         onToggle={handleNavToggle}
       >
         <Container>
-          <Navbar.Brand>
-            <img
-              src={skobka}
-              className="d-inline-block align-top"
-              alt="logo"
-              height="40vmin"
-            />
-          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse
             id="basic-navbar-nav"
@@ -77,12 +68,12 @@ function Header() {
                 <span className="highlighted-text-nav"> 02.</span>Поиск картинок
               </Nav.Link>
               <a
-                className="header__nav-item nav-link"
+                className="header__nav-button nav-link header__nav-item"
                 href={resume}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="highlighted-text-nav"> 03.</span>Резюме
+                <span className="highlighted-text-nav resume"> 03.</span>Резюме
               </a>
             </Nav>
           </Navbar.Collapse>

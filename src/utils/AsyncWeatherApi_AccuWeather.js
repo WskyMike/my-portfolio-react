@@ -43,7 +43,6 @@ export const getWeather = async (city) => {
 
     // Ждем данные в формате JSON и записываем в переменную
     const weatherData = await weatherResponse.json();
-    // console.log(weatherData);
 
     // Формируем объект с данными о погоде
     const getWeather = {
@@ -60,7 +59,6 @@ export const getWeather = async (city) => {
         ".svg"),
       // icon: `https://developer.accuweather.com/sites/default/files/${weatherData[0].WeatherIcon}.svg`,
     };
-    // console.log(getWeather);
 
     // Возвращаем объект с данными о погоде
     return getWeather;
