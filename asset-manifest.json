@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/my-portfolio-react/static/css/main.bf6e48b3.css",
-    "main.js": "/my-portfolio-react/static/js/main.65357855.js",
+    "main.js": "/my-portfolio-react/static/js/main.a6dba825.js",
     "static/js/787.fe039db8.chunk.js": "/my-portfolio-react/static/js/787.fe039db8.chunk.js",
     "static/media/Sosnin_MI_resume.pdf": "/my-portfolio-react/static/media/Sosnin_MI_resume.ae09b10e3dbdab653372.pdf",
     "static/media/mesto.jpg": "/my-portfolio-react/static/media/mesto.09908010bcf9d4798a49.jpg",
@@ -62,11 +62,11 @@
     "static/media/vk.svg": "/my-portfolio-react/static/media/vk.82e8ef76b05ac2a1c5870f9ff96b62b8.svg",
     "static/media/insta.svg": "/my-portfolio-react/static/media/insta.a24f646606b664033d871cc61c820e15.svg",
     "main.bf6e48b3.css.map": "/my-portfolio-react/static/css/main.bf6e48b3.css.map",
-    "main.65357855.js.map": "/my-portfolio-react/static/js/main.65357855.js.map",
+    "main.a6dba825.js.map": "/my-portfolio-react/static/js/main.a6dba825.js.map",
     "787.fe039db8.chunk.js.map": "/my-portfolio-react/static/js/787.fe039db8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bf6e48b3.css",
-    "static/js/main.65357855.js"
+    "static/js/main.a6dba825.js"
   ]
 }
