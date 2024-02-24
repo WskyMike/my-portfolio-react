@@ -2,10 +2,16 @@ import React from "react";
 import { Slide, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function renderToastify(type, message, position = null, theme = null) {
+function renderToastify(
+  type,
+  message,
+  position = null,
+  theme = null,
+  autoClose = null
+) {
   return toast[type](message, {
     position: position || "top-center",
-    autoClose: 3000,
+    autoClose: autoClose || 3000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
