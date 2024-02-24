@@ -5,7 +5,7 @@ import { getWeather } from "../../utils/AsyncWeatherApi_AccuWeather";
 import humidityImg from "../../images/weather_icons/hygrometer.svg";
 import windImg from "../../images/weather_icons/wind.svg";
 import Loader from "../Loader/Loader";
-import NotFoundImg from "../../images/page-not-found-5.png";
+import NotFoundImg from "../../images/not-found-angry-face.svg";
 import { Toastify, renderToastify } from "../../vendor/Toastify/ToastifyConfig";
 
 const Weather = () => {
@@ -22,7 +22,12 @@ const Weather = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     if (city.trim() === "") {
-      renderToastify("info", "Введите запрос", "bottom-right", "light");
+      renderToastify(
+        "info",
+        "Введите название города",
+        "bottom-right",
+        "light"
+      );
       return;
     }
     setLoading(true);
@@ -39,12 +44,18 @@ const Weather = () => {
         setError(false); // Если была до этого ошибка - убираем
         setWeather(data);
       } catch (error) {
-        // console.error("Ошибка в получении данных в компоненте Weather", error);
-        renderToastify("error", `Ошибка в получении данных.`, "bottom-right");
+        renderToastify(
+          "error",
+          `Местоположение не найдено. Попробуйте поменять язык ввода или добавить страну.`,
+          "bottom-right",
+          "colored",
+          5000
+        );
         setError(true); // Выводим not found
         setWeather(null);
       }
       setLoading(false);
+      setCity("");
     }, 1500);
   };
 
@@ -151,13 +162,15 @@ const Weather = () => {
           </div>
         )}
         {error && (
-          <div className="weather__not-found">
-            <p className="weather__not-found-text-top">
+          <div
+            className={`weather__not-found ${loading ? "fade-out" : "fade-in"}`}
+          >
+            {/* <p className="weather__not-found-text-top">
               Местоположение не найдено.
             </p>
             <p className="weather__not-found-text-bottom">
               Попробуйте поменять язык ввода и\или добавить страну.
-            </p>
+            </p> */}
             <img
               src={NotFoundImg}
               alt="not found img"
