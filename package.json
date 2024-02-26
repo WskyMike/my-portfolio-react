@@ -1,6 +1,5 @@
 {
   "name": "my-portfolio-react",
-  "homepage": "https://wskymike.github.io/my-portfolio-react/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -50,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "autoprefixer": "^10.4.14",
     "bootstrap": "^5.2.3",
     "css-loader": "^6.7.3",

@@ -32,7 +32,6 @@ function Search({ onSearch }) {
             <Form.Control
               className="search__input"
               type="text"
-              placeholder="Unsplash this . . ."
               value={query}
               onChange={handleInputChange}
               required
