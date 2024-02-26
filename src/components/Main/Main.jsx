@@ -16,17 +16,18 @@ function Main() {
       <div className="row">
         <section className="greeting col-md-7">
           <h1 className="greeting__upper-text">
-            <Typewriter
+            Привет, я Михаил.
+            {/* <Typewriter
               options={{
                 autoStart: false,
                 loop: false,
                 cursor: "|",
-                delay: 0,
+                delay: 100,
               }}
               onInit={(typewriter) => {
                 typewriter.pauseFor(0).typeString("Привет, я Михаил.").start();
               }}
-            />
+            /> */}
           </h1>
           <h2 className="greeting__lower-text">
             Начинающий <br />

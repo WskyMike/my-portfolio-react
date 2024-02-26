@@ -33,7 +33,7 @@ export const PROJECTS_INFO = [
     title: "Movies Explorer",
     class: "fade-in-2",
     description: "Регистрируйтесь, ищите фильмы и сохраняйте их в избранное.",
-    websiteUrl: "https://diploma.front.nomorepartiesxyz.ru/",
+    websiteUrl: "https://moviesexplorer.webtm.ru/",
     githubUrl: "https://github.com/WskyMike/movies-explorer-frontend",
     githubIconUrl: GithubIcon,
     imageUrl: MoviesExplorerImg,
@@ -51,7 +51,7 @@ export const PROJECTS_INFO = [
     class: "fade-in-3",
     description:
       "Регистрируйтесь, делитесь фото в общей ленте вместе с друзьями. Ставьте лайки.",
-    websiteUrl: "https://mesto.front.nomorepartiesxyz.ru/",
+    websiteUrl: "https://mesto.webtm.ru/",
     githubUrl: "https://github.com/WskyMike/react-mesto-api-full",
     githubIconUrl: GithubIcon,
     imageUrl: MestoImg,
