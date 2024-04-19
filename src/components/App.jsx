@@ -9,6 +9,7 @@ import Social from "./Social/Social";
 import SocialHorizontal from "./SocialHorizontal/SocialHorizontal";
 import Pictures from "./Pictures/Pictures";
 import Projects from "./Projects/Projects";
+import ScrollToTop from "./ScrollToTop/ScrollToTop";
 
 import "./App.scss";
 
@@ -17,6 +18,7 @@ function App() {
     <AppContexts.Provider value={false}>
       <div className="App">
         <Header />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/projects" element={<Projects />} />

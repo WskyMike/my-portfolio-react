@@ -16,7 +16,7 @@ function Gallery({ query }) {
   // Состояние для хранения загруженных фотографий
   const [photos, setPhotos] = useState([]);
   // Состояние для указания состояния загрузки
-  const [loading, setLoading] = useState(false);
+  const [isLoadingPhotos, setisLoadingPhotos] = useState(false);
   // Состояние текущей страницы
   const [currentPage, setCurrentPage] = useState(1);
   // Состояние общего количества страниц
@@ -36,10 +36,18 @@ function Gallery({ query }) {
   // Функция для загрузки фотографий с Unsplash
   const fetchPhotos = async (query, page) => {
     try {
-      setLoading(true); // Устанавливаем состояние загрузки
+      setisLoadingPhotos(true); // Устанавливаем состояние загрузки
       const data = await UnsplashApi(query, page); // Получаем данные с API
       if (!data.results) {
         throw new Error('Ответ API не содержит блока "results"');
+      } else if (data.total === 0) {
+        setisLoadingPhotos(false);
+        renderToastify(
+          "info",
+          `По данному запросу фотографий не найдено.`,
+          "top-center",
+          "light"
+        );
       }
       // Обновляем состояние фотографий
       setPhotos((prevPhotos) => {
@@ -54,11 +62,14 @@ function Gallery({ query }) {
       renderToastify(
         "error",
         `Ошибка запроса. Пожалуйста попробуйте позднее.`,
-        "bottom-center"
+        "bottom-right"
       );
       throw error; // Перебрасываем ошибку, чтобы она могла быть обработана в коде, который вызывает fetchPhotos()
     } finally {
-      setLoading(false); // Снимаем состояние загрузки
+      // Устанавливаем таймер на сброс состояния загрузки через 3 секунды
+      setTimeout(() => {
+        setisLoadingPhotos(false);
+      }, 3000);
     }
   };
 
@@ -83,7 +94,7 @@ function Gallery({ query }) {
     const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
     if (
       scrollTop + clientHeight >= scrollHeight - 1 &&
-      !loading &&
+      !isLoadingPhotos &&
       currentPage < totalPages // Проверим, есть ли незагруженные фото
     ) {
       loadMorePhotos();
@@ -96,10 +107,10 @@ function Gallery({ query }) {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [currentPage, loading, query, totalPages]);
+  }, [currentPage, isLoadingPhotos, query, totalPages]);
 
   return (
-    <AppContexts.Provider value={loading}>
+    <AppContexts.Provider value={isLoadingPhotos}>
       <Toastify />
       <ScrollToTopButton />
       <ImagePopup photo={selectedPhoto} onClose={closeAllPopups} />
@@ -115,11 +126,10 @@ function Gallery({ query }) {
               src={photo.urls.raw + "&w=800"}
               alt={photo.alt_description}
             />
-            {/* <div className="gallery__number">{index + 1}</div> */}
           </figure>
         ))}
-        {loading && <Loader />}
       </section>
+      {isLoadingPhotos && <Loader />}
     </AppContexts.Provider>
   );
 }

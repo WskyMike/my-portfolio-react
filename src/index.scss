@@ -65,7 +65,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-size: 16px;
-  background-color: #161616 !important;
+  background-color: $color--global-background- !important;
   scroll-behavior: smooth;
   color: $color--global-text;
   background-repeat: no-repeat;
