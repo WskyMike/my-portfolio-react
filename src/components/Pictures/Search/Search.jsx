@@ -21,6 +21,7 @@ function Search({ onSearch }) {
       return;
     }
     onSearch(query);
+    // setQuery("");
   };
 
   return (

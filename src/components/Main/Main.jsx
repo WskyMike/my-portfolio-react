@@ -1,34 +1,33 @@
-import { React } from "react";
+import { React, useState } from "react";
 import "../../scss/bootstrap_mash.scss";
 import "./Main.scss";
 
 import Skills from "../Skills/Skills";
 import ava from "../../images/ava_2.png";
 import { aboutMeText } from "../../utils/aboutme";
-
-import Typewriter from "typewriter-effect";
 import ContactForm from "./ContactForm/ContactForm";
 import Weather from "../Weather/weather";
+import AboutPageButton from "./AboutPageButton/AboutPageButton";
+import AboutPagePopup from "./AboutPagePopup/AboutPagePopup";
 
 function Main() {
+  const [aboutPagePopupOpen, setIsAboutPagePopupOpen] = useState(false);
+
+  // Обработчик открытия попапа
+  function handleAboutPageClick() {
+    setIsAboutPagePopupOpen(true);
+  }
+
+  // Обработчик закрытия попапа
+  function handleAboutPagePopupClose() {
+    setIsAboutPagePopupOpen(false);
+  }
+
   return (
     <main className="main container">
       <div className="row">
         <section className="greeting col-md-7">
-          <h1 className="greeting__upper-text">
-            Привет, я Михаил.
-            {/* <Typewriter
-              options={{
-                autoStart: false,
-                loop: false,
-                cursor: "|",
-                delay: 100,
-              }}
-              onInit={(typewriter) => {
-                typewriter.pauseFor(0).typeString("Привет, я Михаил.").start();
-              }}
-            /> */}
-          </h1>
+          <h1 className="greeting__upper-text">Привет, я Михаил.</h1>
           <h2 className="greeting__lower-text">
             Начинающий <br />
             <span className="highlighted-text">
@@ -58,6 +57,11 @@ function Main() {
         <section className="informers col-md-5">
           <Skills />
           <Weather />
+          <AboutPageButton onClick={handleAboutPageClick} />
+          <AboutPagePopup
+            isOpen={aboutPagePopupOpen}
+            onClose={handleAboutPagePopupClose}
+          />
         </section>
       </div>
     </main>

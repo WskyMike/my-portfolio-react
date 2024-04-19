@@ -1,5 +1,5 @@
 $color--global-background-: #161616;
-$color--global-text: #fcf5e9;
+$color--global-text: #e7e7e7;
 $color--scrollbar-dark: #000030;
 $color--scrollbar-light: #2d496b;
 $color--global-green: #98ce00;
@@ -40,12 +40,14 @@ $color--global-js-yellow: #ffdf00;
   }
   &:focus {
     border: none !important;
-    background-color: $color--global-green !important;
     box-shadow: none;
   }
   &:hover {
     border: none !important;
     background-color: $color--global-green !important;
+  }
+  &:focus-visible {
+    background-color: $color--global-gray;
   }
 }
 

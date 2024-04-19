@@ -11,16 +11,18 @@ function Header() {
 
   const handleNavToggle = () => setIsNavExpanded(!isNavExpanded);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      setIsHeaderVisible(currentScrollPos < 70);
-    };
+  // Фича "Изчезающий  при скролле хедер". Расскомментировать по-настроению. <<< <<< <<<
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const currentScrollPos = window.scrollY;
+  //     setIsHeaderVisible(currentScrollPos < 70);
+  //   };
+
+  //   handleScroll();
+  //   window.addEventListener("scroll", handleScroll, { passive: true });
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   // Клик по любому item закрывает меню
   const handleavClick = () => {

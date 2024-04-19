@@ -1,0 +1,31 @@
+.aboutpage__button {
+  position: fixed;
+  bottom: 5vh;
+  right: 4vh;
+  width: 7vh;
+  height: 7vh;
+  border-radius: 50%;
+  background-color: #ffffff14;
+  z-index: 9999;
+  border: none;
+  backdrop-filter: blur(5px);
+}
+
+.aboutpage__img {
+  height: 7vh;
+  background: url(../../../images/quest.png);
+  background-size: 7vh 7vh;
+  background-position: center;
+  transition: transform 0.3s ease-in-out;
+  background-repeat: no-repeat;
+}
+
+.aboutpage__img:hover {
+  transform: rotate(7deg);
+}
+
+@media (max-width: 990px) {
+  .aboutpage__img {
+    right: 7vh;
+  }
+}
