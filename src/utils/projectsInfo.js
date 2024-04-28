@@ -3,6 +3,7 @@ import MestoImg from "../images/mesto.jpg";
 import RusTravelImg from "../images/russian_travel.jpg";
 import LearnImg from "../images/how_to_learn.jpg";
 import WhatsAppImg from "../images/demo_chat.png";
+import CartImg from "../images/cart.jpg";
 
 import ReactIcon from "../images/skills/icons8-react-96.png";
 import ExpressIcon from "../images/skills/icons8-express-js-96.png";
@@ -14,6 +15,21 @@ import GithubIcon from "../images/skills/icons8-github-90.png";
 export const PROJECTS_INFO = [
   {
     id: "1",
+    title: "Shopping cart",
+    class: "fade-in-1",
+    description: "Просто корзина на VK UI",
+    websiteUrl: "http://vk-cart-app.tw1.ru/",
+    githubUrl: "https://github.com/WskyMike/vk-shopping-cart-test",
+    githubIconUrl: GithubIcon,
+    imageUrl: CartImg,
+    techIcons: [
+      { name: "HTML", icon: HtmlIcon },
+      { name: "CSS", icon: CssIcon },
+      { name: "React", icon: ReactIcon },
+    ],
+  },
+  {
+    id: "2",
     title: "WhatsApp Web",
     class: "fade-in-1",
     description: "Для обмена мнениями с любым пользователем WhatsApp.",
@@ -29,7 +45,7 @@ export const PROJECTS_INFO = [
     ],
   },
   {
-    id: "2",
+    id: "3",
     title: "Movies Explorer",
     class: "fade-in-2",
     description: "Регистрируйтесь, ищите фильмы и сохраняйте их в избранное.",
@@ -46,7 +62,7 @@ export const PROJECTS_INFO = [
     ],
   },
   {
-    id: "3",
+    id: "4",
     title: "Mesto",
     class: "fade-in-3",
     description:
@@ -63,7 +79,7 @@ export const PROJECTS_INFO = [
     ],
   },
   {
-    id: "4",
+    id: "5",
     title: "Russian Travel",
     class: "fade-in-4",
     description:
@@ -78,7 +94,7 @@ export const PROJECTS_INFO = [
     ],
   },
   {
-    id: "5",
+    id: "6",
     title: "How to Learn",
     class: "fade-in-4",
     description: "Статичный сайт. Подсказки по эффективному обучению.",
