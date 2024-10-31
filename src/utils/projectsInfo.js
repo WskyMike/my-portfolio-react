@@ -3,7 +3,7 @@ import MestoImg from "../images/mesto.jpg";
 import RusTravelImg from "../images/russian_travel.jpg";
 import LearnImg from "../images/how_to_learn.jpg";
 import WhatsAppImg from "../images/demo_chat.png";
-import CartImg from "../images/cart.jpg";
+import movgal from "../images/movgal.jpg";
 
 import ReactIcon from "../images/skills/icons8-react-96.png";
 import ExpressIcon from "../images/skills/icons8-express-js-96.png";
@@ -11,21 +11,25 @@ import SassIcon from "../images/skills/icons8-sass-96.png";
 import HtmlIcon from "../images/skills/html5.png";
 import CssIcon from "../images/skills/css3.png";
 import GithubIcon from "../images/skills/icons8-github-90.png";
+import BootstrapIcon from "../images/bootstrap.svg";
+import FirebaseIcon from "../images/firebase.svg";
 
 export const PROJECTS_INFO = [
   {
     id: "1",
-    title: "Shopping cart",
+    title: "Moviegallery App",
     class: "fade-in-1",
-    description: "Просто корзина на VK UI",
-    websiteUrl: "http://vk-cart-app.tw1.ru/",
-    githubUrl: "https://github.com/WskyMike/vk-shopping-cart-test",
+    description: "Пет-проект. Выбери фильмы на вечер и добавь в закладки.",
+    websiteUrl: "https://moviegallery.tw1.ru/",
+    githubUrl: "https://github.com/WskyMike/moviesgallery-pet-react",
     githubIconUrl: GithubIcon,
-    imageUrl: CartImg,
+    imageUrl: movgal,
     techIcons: [
       { name: "HTML", icon: HtmlIcon },
       { name: "CSS", icon: CssIcon },
       { name: "React", icon: ReactIcon },
+      { name: "Bootstrap", icon: BootstrapIcon },
+      { name: "Firebase", icon: FirebaseIcon },
     ],
   },
   {
