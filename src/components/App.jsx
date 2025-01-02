@@ -7,7 +7,6 @@ import Main from "./Main/Main";
 import Footer from "./Footer/Footer";
 import Social from "./Social/Social";
 import SocialHorizontal from "./SocialHorizontal/SocialHorizontal";
-import Pictures from "./Pictures/Pictures";
 import Projects from "./Projects/Projects";
 import ScrollToTop from "./ScrollToTop/ScrollToTop";
 
@@ -22,7 +21,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/pictures" element={<Pictures />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Social />
