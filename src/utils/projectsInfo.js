@@ -3,7 +3,7 @@ import MestoImg from "../images/mesto.jpg";
 import RusTravelImg from "../images/russian_travel.jpg";
 import LearnImg from "../images/how_to_learn.jpg";
 import WhatsAppImg from "../images/demo_chat.png";
-import movgal from "../images/movgal.jpg";
+import movgal from "../images/movgal_1.jpg";
 
 import ReactIcon from "../images/skills/icons8-react-96.png";
 import ExpressIcon from "../images/skills/icons8-express-js-96.png";
@@ -17,7 +17,7 @@ import FirebaseIcon from "../images/firebase.svg";
 export const PROJECTS_INFO = [
   {
     id: "1",
-    title: "Moviegallery App",
+    title: "Киногалерея",
     class: "fade-in-1",
     description: "Пет-проект. Выбери фильмы на вечер и добавь в закладки.",
     websiteUrl: "https://moviegallery.tw1.ru/",

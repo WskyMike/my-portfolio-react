@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
@@ -10,19 +10,6 @@ function Header() {
   const [isNavExpanded, setIsNavExpanded] = useState(false); // Сворачиваемый хедер
 
   const handleNavToggle = () => setIsNavExpanded(!isNavExpanded);
-
-  // Фича "Изчезающий  при скролле хедер". Расскомментировать по-настроению. <<< <<< <<<
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const currentScrollPos = window.scrollY;
-  //     setIsHeaderVisible(currentScrollPos < 70);
-  //   };
-
-  //   handleScroll();
-  //   window.addEventListener("scroll", handleScroll, { passive: true });
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
 
   // Клик по любому item закрывает меню
   const handleavClick = () => {
@@ -61,21 +48,21 @@ function Header() {
               >
                 <span className="highlighted-text-nav"> 01.</span>Мои проекты
               </Nav.Link>
-              <Nav.Link
+              {/* <Nav.Link
                 as={NavLink}
                 to="/pictures"
                 className="header__nav-item"
                 onClick={handleavClick}
               >
                 <span className="highlighted-text-nav"> 02.</span>Поиск картинок
-              </Nav.Link>
+              </Nav.Link> */}
               <a
                 className="header__nav-button nav-link header__nav-item"
                 href={resume}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="highlighted-text-nav resume"> 03.</span>Резюме
+                <span className="highlighted-text-nav resume"> 02.</span>Резюме
               </a>
             </Nav>
           </Navbar.Collapse>

@@ -1,28 +1,14 @@
-import { React, useState } from "react";
+import { React } from "react";
 import "../../scss/bootstrap_mash.scss";
 import "./Main.scss";
 
 import Skills from "../Skills/Skills";
-import ava from "../../images/ava_2.png";
+import ava from "../../images/ava_2.webp";
 import { aboutMeText } from "../../utils/aboutme";
 import ContactForm from "./ContactForm/ContactForm";
-import Weather from "../Weather/weather";
-import AboutPageButton from "./AboutPageButton/AboutPageButton";
-import AboutPagePopup from "./AboutPagePopup/AboutPagePopup";
+import MainPet from "../MainPet/MainPet";
 
 function Main() {
-  const [aboutPagePopupOpen, setIsAboutPagePopupOpen] = useState(false);
-
-  // Обработчик открытия попапа
-  function handleAboutPageClick() {
-    setIsAboutPagePopupOpen(true);
-  }
-
-  // Обработчик закрытия попапа
-  function handleAboutPagePopupClose() {
-    setIsAboutPagePopupOpen(false);
-  }
-
   return (
     <main className="main container">
       <div className="row">
@@ -56,12 +42,7 @@ function Main() {
         </section>
         <section className="informers col-md-5">
           <Skills />
-          <Weather />
-          <AboutPageButton onClick={handleAboutPageClick} />
-          <AboutPagePopup
-            isOpen={aboutPagePopupOpen}
-            onClose={handleAboutPagePopupClose}
-          />
+          <MainPet />
         </section>
       </div>
     </main>
