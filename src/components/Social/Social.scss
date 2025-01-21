@@ -28,15 +28,15 @@
 
 .social__icon {
   width: 30px;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .social__icon:hover {
-  transform: rotate(360deg);
+  transform: rotate(10deg);
 }
 
 .social__icon:hover:not(:active) {
-  transform: rotate(360deg) initial;
+  transform: rotate(10deg) initial;
 }
 
 @media screen and (max-width: 1024px) {
