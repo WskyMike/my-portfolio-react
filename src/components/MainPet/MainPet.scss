@@ -84,7 +84,11 @@
       cursor: pointer;
 
       &:hover {
-        background-image: linear-gradient(90deg, #98ce00 0%, #989898 80%);
+        background-image: linear-gradient(
+          90deg,
+          $color--global-js-yellow 0%,
+          #989898 90%
+        );
         background-clip: text;
         -webkit-background-clip: text;
         -moz-background-clip: text;

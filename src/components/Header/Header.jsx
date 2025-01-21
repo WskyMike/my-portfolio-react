@@ -3,7 +3,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 import "./Header.scss";
-import resume from "../../images/Sosnin_MI_resume.pdf";
+import resume from "../../images/SosninMI_CV.pdf";
 
 function Header() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true); // Изчезающий хедер
@@ -48,14 +48,6 @@ function Header() {
               >
                 <span className="highlighted-text-nav"> 01.</span>Мои проекты
               </Nav.Link>
-              {/* <Nav.Link
-                as={NavLink}
-                to="/pictures"
-                className="header__nav-item"
-                onClick={handleavClick}
-              >
-                <span className="highlighted-text-nav"> 02.</span>Поиск картинок
-              </Nav.Link> */}
               <a
                 className="header__nav-button nav-link header__nav-item"
                 href={resume}
