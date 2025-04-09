@@ -7,6 +7,7 @@ import WhatsAppImg from "../images/demo_chat.webp";
 import movgal from "../images/movgal_1.webp";
 import creativemind from "../images/creativemind.webp";
 import vangogh from "../images/vangogh.webp";
+import duckshop from "../images/duckshop.webp";
 
 import {
   RiTailwindCssFill,
@@ -41,18 +42,17 @@ export const PROJECTS_INFO = [
   },
   {
     id: "2",
-    title: "WhatsApp Web",
+    title: "Пример верстки",
     class: "fade-in-1",
-    description: "Для обмена мнениями с любым пользователем WhatsApp.",
-    websiteUrl: "https://wskymike.github.io/whatsapp-greenapi-react/",
-    githubUrl: "https://github.com/WskyMike/whatsapp-greenapi-react",
+    description:
+      "Адаптивная верстка магазина уточек. Особое внимани БЭМ методологии. Форма обратной связи.",
+    websiteUrl: "https://wskymike.github.io/adwin-test-layout/",
+    githubUrl: "https://github.com/WskyMike/adwin-test-layout",
     githubIcon: <RiGithubFill />,
-    imageUrl: WhatsAppImg,
+    imageUrl: duckshop,
     techIcons: [
       { name: "HTML", icon: <RiHtml5Fill /> },
       { name: "CSS", icon: <RiCss3Fill /> },
-      { name: "React", icon: <RiReactjsFill /> },
-      { name: "SASS", icon: <FaSass /> },
     ],
   },
   {
@@ -88,6 +88,22 @@ export const PROJECTS_INFO = [
   },
   {
     id: "5",
+    title: "WhatsApp Web",
+    class: "fade-in-1",
+    description: "Для обмена мнениями с любым пользователем WhatsApp.",
+    websiteUrl: "https://wskymike.github.io/whatsapp-greenapi-react/",
+    githubUrl: "https://github.com/WskyMike/whatsapp-greenapi-react",
+    githubIcon: <RiGithubFill />,
+    imageUrl: WhatsAppImg,
+    techIcons: [
+      { name: "HTML", icon: <RiHtml5Fill /> },
+      { name: "CSS", icon: <RiCss3Fill /> },
+      { name: "React", icon: <RiReactjsFill /> },
+      { name: "SASS", icon: <FaSass /> },
+    ],
+  },
+  {
+    id: "6",
     title: "Movies Explorer",
     class: "fade-in-3",
     description:
@@ -106,7 +122,7 @@ export const PROJECTS_INFO = [
     ],
   },
   {
-    id: "6",
+    id: "7",
     title: "Mesto",
     class: "fade-in-3",
     description:
@@ -124,7 +140,7 @@ export const PROJECTS_INFO = [
     ],
   },
   {
-    id: "7",
+    id: "8",
     title: "Russian Travel",
     class: "fade-in-4",
     description:
@@ -139,7 +155,7 @@ export const PROJECTS_INFO = [
     ],
   },
   {
-    id: "8",
+    id: "9",
     title: "How to Learn",
     class: "fade-in-4",
     description: "Статичный сайт. Подсказки по эффективному обучению.",
