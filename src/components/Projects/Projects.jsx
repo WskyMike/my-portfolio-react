@@ -28,11 +28,11 @@ function Projects() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
-                    src={project.githubIconUrl}
-                    alt="GitHub"
-                    className="projects__card-tech-img github-img"
-                  />
+                  {React.isValidElement(project.githubIcon)
+                    ? React.cloneElement(project.githubIcon, {
+                        className: "projects__card-tech-img github-img",
+                      })
+                    : null}
                 </a>
                 <Card.Title
                   className="projects__card-title"
@@ -47,12 +47,16 @@ function Projects() {
                 </Card.Text>
                 <div className="projects__card-tech">
                   {project.techIcons.map((techIcon) => (
-                    <img
+                    <span
                       key={techIcon.name}
-                      src={techIcon.icon}
-                      alt={techIcon.name}
-                      className="projects__card-tech-img"
-                    />
+                      className="projects__card-tech-item"
+                    >
+                      {React.isValidElement(techIcon.icon)
+                        ? React.cloneElement(techIcon.icon, {
+                            className: "projects__card-tech-img",
+                          })
+                        : null}
+                    </span>
                   ))}
                 </div>
               </Card.Body>

@@ -32,11 +32,15 @@ function Main() {
             const <span className="highlighted-text-shadow">aboutMeText</span> =
           </h3>
           <div className="aboutme__text-wrapper">
-            {aboutMeText.split("\n").map((paragraph, index) => (
-              <p key={index} className="aboutme__text">
-                {paragraph}
-              </p>
-            ))}
+            {aboutMeText.split("\n").map((paragraph, index) =>
+              paragraph.trim() === "" ? (
+                <br key={index} />
+              ) : (
+                <p key={index} className="aboutme__text">
+                  {paragraph}
+                </p>
+              )
+            )}
           </div>
           <ContactForm />
         </section>
