@@ -26,11 +26,11 @@ function MainPet() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src={project.githubIconUrl}
-                alt="GitHub"
-                className="main-pet__card-tech-img main-pet__github-img"
-              />
+              {React.isValidElement(project.githubIcon)
+                ? React.cloneElement(project.githubIcon, {
+                    className: "main-pet__card-tech-img main-pet__github-img",
+                  })
+                : null}
             </a>
             <Card.Title
               className="main-pet__card-title"
@@ -45,12 +45,13 @@ function MainPet() {
             </Card.Text>
             <div className="main-pet__card-tech">
               {project.techIcons.map((techIcon) => (
-                <img
-                  key={techIcon.name}
-                  src={techIcon.icon}
-                  alt={techIcon.name}
-                  className="main-pet__card-tech-img"
-                />
+                <span key={techIcon.name} className="main-pet__card-tech-item">
+                  {React.isValidElement(techIcon.icon)
+                    ? React.cloneElement(techIcon.icon, {
+                        className: "main-pet__card-tech-img",
+                      })
+                    : null}
+                </span>
               ))}
             </div>
           </Card.Body>

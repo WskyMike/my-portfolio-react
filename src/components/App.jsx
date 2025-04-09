@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import AppContexts from "../Сontexts/AppContexts";
-
+import RouteTracker from "../utils/RouteTracker";
 import Header from "./Header/Header";
 import Main from "./Main/Main";
 import Footer from "./Footer/Footer";
@@ -18,6 +18,7 @@ function App() {
       <div className="App">
         <Header />
         <ScrollToTop />
+        <RouteTracker />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/projects" element={<Projects />} />

@@ -1,12 +1,13 @@
-import bootstrapImg from "../images/skills/Skill=Bootstrap.png";
+import bootstrapImg from "../images/skills/Bootstrap.png";
 import html5Img from "../images/skills/html5.png";
 import css3Img from "../images/skills/css3.png";
-import reactImg from "../images/skills/react.png";
+import reactImg from "../images/skills/react.svg";
 import UXimg from "../images/skills/UX.png";
 import gitImg from "../images/skills/git.png";
 import nodeImg from "../images/skills/image.png";
 import sassImg from "../images/skills/sass.png";
 import jsImg from "../images/skills/js.png";
+import tailwind from "../images/skills/tailwind.svg";
 
 export const skills = {
   html: {
@@ -32,6 +33,10 @@ export const skills = {
   bootstrap: {
     name: "Bootstrap",
     image: bootstrapImg,
+  },
+  tailwind: {
+    name: "Tailwind CSS",
+    image: tailwind,
   },
   node: {
     name: "Node.JS",
